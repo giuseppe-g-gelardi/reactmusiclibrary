@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { Table } from 'react-bootstrap'
 
 export default function MusicTable({ songList }) {
-  const [searchTerm, setSearchTerm] = useState()
+  const [searchTerm, setSearchTerm] = useState('')
   const [songs, setSongs] = useState([])
 
   useEffect(() => {
     setSongs(songList)
-  }, [songList])
+  }) // does not need dependency array?
 
   return (
     <div>
