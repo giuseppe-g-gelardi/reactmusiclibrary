@@ -5,6 +5,7 @@ export default function MusicTable({ songList }) {
   const [searchTerm, setSearchTerm] = useState('')
   const [songs, setSongs] = useState([])
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     setSongs(songList)
   }) // does not need dependency array?
@@ -35,9 +36,10 @@ export default function MusicTable({ songList }) {
             </thead>
             <tbody>
               {songs
+                // eslint-disable-next-line array-callback-return
                 .filter(val => {
                   let searchString = ''
-                  for (let [key, value] of Object.entries(val)) {
+                  for (let value of Object.entries(val)) {
                     searchString += `${value}\t`
                   }
                   if (searchTerm === '') {
@@ -58,7 +60,6 @@ export default function MusicTable({ songList }) {
                       <td>{val.artist}</td>
                       <td>{val.genre}</td>
                       <td>{val.releaseDate}</td>
-                  
                     </tr>
                   )
                 })}
