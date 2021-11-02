@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Table } from 'react-bootstrap'
+// import { InputBase } from '@mui/material';
 
 export default function MusicTable({ songList }) {
   const [searchTerm, setSearchTerm] = useState('')
@@ -12,11 +13,10 @@ export default function MusicTable({ songList }) {
 
   return (
     <div>
-      <h2 id='inventory-heading'>music table</h2>
-  
-      <div id='inventory-filter' className='inventory'>
+      <div id='table-filter' className='song-table'>
         <input
           type='text'
+          className='filter-input'
           placeholder='Filter songs...'
           onChange={e => {
             setSearchTerm(e.target.value)

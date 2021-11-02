@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import MusicTable from './components/MusicTable'
 import Navbar from './components/Navbar'
-import SearchBar from './components/SearchBar'
+// import SearchBar from './components/SearchBar'
 
 export default function App() {
   const [songList, setSongList] = useState([])
@@ -31,10 +31,9 @@ export default function App() {
 
   return (
     <>
-      <h1>hello world</h1>
-      <MusicTable songList={songList} />
       <Navbar />
-      <SearchBar />
+      <MusicTable songList={songList} />
+      {/* <SearchBar /> */}
     </>
   )
 }
