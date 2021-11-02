@@ -7,7 +7,8 @@ import Navbar from './components/Navbar'
 export default function App() {
   const [songList, setSongList] = useState([])
 
-  const api = 'http://www.devcodecampmusiclibrary.com/'
+  const dbUri = 'http://localhost:3500/songs/'
+  // const api = 'http://www.devcodecampmusiclibrary.com/'
 
   useEffect(() => {
     getSongs()
@@ -15,9 +16,11 @@ export default function App() {
 
   const getSongs = async () => {
     try {
-      axios.get(`${api}/api/music`).then(
+      // axios.get(`${api}/api/music`).then(
+      axios.get(`${dbUri}`).then(
         response => {
           setSongList(response.data)
+          console.log(response)
         },
         err => {
           console.log(err)
