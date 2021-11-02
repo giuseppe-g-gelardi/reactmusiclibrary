@@ -8,7 +8,6 @@ export default function App() {
   const [songList, setSongList] = useState([])
 
   const api = 'http://www.devcodecampmusiclibrary.com/'
-  // song title, album, artist, genre, and release date
 
   useEffect(() => {
     getSongs()
