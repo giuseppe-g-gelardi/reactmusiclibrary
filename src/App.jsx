@@ -3,6 +3,7 @@ import axios from 'axios'
 import MusicTable from './components/MusicTable'
 
 export default function App() {
+  const [songList, setSongList] = useState([])
 
   const api = 'http://www.devcodecampmusiclibrary.com/'
   // song title, album, artist, genre, and release date
@@ -15,14 +16,14 @@ export default function App() {
     try {
       axios.get(`${api}/api/music`).then(
         response => {
-          console.log(response.data)
+          setSongList(response.data)
         },
         err => {
           console.log(err)
         }
       )
-    } catch (except) {
-      console.log(except)
+    } catch (e) {
+      console.log(e)
     }
   }
 
@@ -30,7 +31,7 @@ export default function App() {
   return (
     <>
       <h1>hello world</h1>
-      <MusicTable />
+      <MusicTable songList={songList} />
     </>
   )
 }
