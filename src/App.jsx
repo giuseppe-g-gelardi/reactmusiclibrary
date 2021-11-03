@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom/'
 import MusicTable from './components/MusicTable'
 import Navbar from './components/Navbar'
-// import SearchBar from './components/SearchBar'
 import AddSong from './components/AddSong'
 
-export default function App() {
-  const [songList, setSongList] = useState([])
 
+
+export default function App() {
+
+  const [songList, setSongList] = useState([])
   const dbUri = 'http://localhost:3500/songs/'
   // const api = 'http://www.devcodecampmusiclibrary.com/'
 
@@ -15,6 +17,8 @@ export default function App() {
     getSongs()
   }, [])
 
+  // TODO implement put to edit
+  // TODO delete to.. well, delete
   const getSongs = async () => {
     try {
       // axios.get(`${api}/api/music`).then(
@@ -37,9 +41,11 @@ export default function App() {
     <>
       <Navbar />
       <AddSong />
-
       <MusicTable songList={songList} />
-      {/* <SearchBar /> */}
     </>
+    
   )
 }
+
+
+

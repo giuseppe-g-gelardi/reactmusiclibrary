@@ -22,8 +22,8 @@ export default function AddSong() {
     }
     try {
       response = await axios.post(newSongUri, song) 
-    } catch (e) {
-      console.log(e)
+    } catch (error) {
+      console.log(error)
     }
     const content = response
     console.log(content)
