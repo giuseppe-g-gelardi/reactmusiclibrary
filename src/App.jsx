@@ -3,6 +3,7 @@ import axios from 'axios'
 import MusicTable from './components/MusicTable'
 import Navbar from './components/Navbar'
 // import SearchBar from './components/SearchBar'
+import AddSong from './components/AddSong'
 
 export default function App() {
   const [songList, setSongList] = useState([])
@@ -35,6 +36,8 @@ export default function App() {
   return (
     <>
       <Navbar />
+      <AddSong />
+
       <MusicTable songList={songList} />
       {/* <SearchBar /> */}
     </>
