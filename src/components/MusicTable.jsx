@@ -1,13 +1,29 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { Table } from 'react-bootstrap'
+import TextField from '@mui/material/TextField'
+import { makeStyles } from '@material-ui/core/styles'
+
+
 // import { InputBase } from '@mui/material';
+
+
+const useStyles = makeStyles({
+  field: {
+    marginTop: 20,
+    marginBottom: 20,
+    display: 'block'
+  }
+})
 
 export default function MusicTable() {
   const [searchTerm, setSearchTerm] = useState('')
   // const [songs, setSongs] = useState([])
 
   const [songList, setSongList] = useState([])
+
+  const classes = useStyles()
+
 
   // express api
   // const dbUri = 'http://localhost:3500/songs/'
@@ -52,14 +68,17 @@ export default function MusicTable() {
     <div>
   
       <div id='table-filter' className='song-table'>
-        <input
-          type='text'
-          className='filter-input'
-          placeholder='Filter songs...'
+
+        <TextField 
+        label='Filter songs...'
+        className={classes.field}
           onChange={e => {
             setSearchTerm(e.target.value)
           }}
         />
+
+
+
         <br />
         <div className='table'>
           <Table responsive striped bordered hover variant='light'>
