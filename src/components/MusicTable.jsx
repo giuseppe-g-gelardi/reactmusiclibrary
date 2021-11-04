@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Table } from 'react-bootstrap'
 import TextField from '@mui/material/TextField'
 import { makeStyles } from '@material-ui/core/styles'
-import Button from '@material-ui/core/Button'
-import DeleteIcon from '@material-ui/icons/Delete';
 import Grid from '@material-ui/core/Grid'
 import { Container } from '@material-ui/core'
 import MusicCard from './MusicCard'
@@ -19,20 +16,8 @@ const useStyles = makeStyles({
 
 export default function MusicTable() {
   const [searchTerm, setSearchTerm] = useState('')
-  // const [songs, setSongs] = useState([])
   const [songList, setSongList] = useState([])
-
   const classes = useStyles()
-
-  // express api
-  // const dbUri = 'http://localhost:3500/songs/'
-
-  // dCC api
-  // const api = 'http://www.devcodecampmusiclibrary.com/'
-      // axios.get(`${api}/api/music`).then(
-
-
-  //json server
   const dbUri = 'http://localhost:8000/songs'
 
   useEffect(() => {
@@ -60,15 +45,14 @@ export default function MusicTable() {
   }
 
   return (
-
       <Container>
-           <TextField 
-            label='Filter songs...'
-            className={classes.field}
-              onChange={e => {
-                setSearchTerm(e.target.value)
-              }}
-            />
+        <TextField 
+          label='Filter songs...'
+          className={classes.field}
+            onChange={e => {
+              setSearchTerm(e.target.value)
+            }}
+          />
         <Grid container spacing={3}>
           {songList
            // eslint-disable-next-line array-callback-return
@@ -82,11 +66,9 @@ export default function MusicTable() {
             } else if (
               searchString
                 .toLowerCase()
-                .includes(searchTerm.toLowerCase())
-            ) {
+                .includes(searchTerm.toLowerCase())) {
               return val
-            }
-          }).map(song => (
+            }}).map(song => (
             <Grid item key={song.id} sx={12} md={6} lg={4}> 
               <MusicCard song={song} handleDelete={handleDelete} />
             </Grid>
