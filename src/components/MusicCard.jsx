@@ -8,14 +8,14 @@ import { blue, green, pink, yellow } from '@material-ui/core/colors'
 
 const useStyles = makeStyles({
   avatar: {
-    backgroundColor: (note) => {
-      if (note.category === 'work') {
+    backgroundColor: (song) => {
+      if (song.category === 'work') {
         return yellow[700]
       }
-      if (note.category === 'money') {
+      if (song.category === 'money') {
         return green[500]
       }
-      if (note.category === 'todos') {
+      if (song.category === 'todos') {
         return pink[700]
       }
       return blue[500]
@@ -33,7 +33,7 @@ export default function MusicCard({ song, handleDelete }) {
         <CardHeader 
           avatar={
             <Avatar className={classes.avatar}>
-              {song.title[0].toUpperCase()}
+              {song.artist[0]}
             </Avatar>
           }
           action={

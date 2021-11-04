@@ -18,7 +18,7 @@ const drawerWidth = 240
 const useStyles = makeStyles((theme) => {
   return {
     page: {
-      background: '#f9f9f9',
+      // background: '#f9f9f9',
       width: '100%',
       padding: theme.spacing(3)
     },
@@ -31,9 +31,9 @@ const useStyles = makeStyles((theme) => {
     root: {
       display: 'flex'
     },
-    active: {
-      background: '#f4f4f4'
-    },
+    // active: {
+    //   background: '#f4f4f4'
+    // },
     title: {
       padding: theme.spacing(2)
     },
@@ -81,17 +81,16 @@ export default function Layout({ children }) {
           <Typography className={classes.date}>
             Today is {format(new Date(), 'MMMM do, Y')}
           </Typography>
-
+{/* ! add theme toggle */} 
           <Typography>
             User
           </Typography>
           <Avatar src='/221584.jpg' className={classes.avatar} />
         </Toolbar>
-
+{/* add theme toggle */}
       </AppBar>
 
    {/* side drawer */}
-
    <Drawer
         className={classes.drawer}
         variant='permanent'
@@ -106,7 +105,6 @@ export default function Layout({ children }) {
 
 
         {/* list / links */}
-
         <List>
           {menuItems.map(item => (
             <ListItem
@@ -118,18 +116,9 @@ export default function Layout({ children }) {
               <ListItemIcon>{item.icon}</ListItemIcon>
               <ListItemText primary={item.text} />
             </ListItem>
-
-
           ))}
         </List>
-
-
       </Drawer>
-
-      
-
-
-
       <div className={classes.page}>
         <div className={classes.toolbar}></div>
         {children}

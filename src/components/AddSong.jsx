@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { useHistory } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
@@ -25,18 +25,14 @@ export default function AddSong() {
   const [artist, setArtist] = useState('')
   const [genre, setGenre] = useState('')
   const [releaseDate, setReleaseDate] = useState('')
-
-
+  const [redirect, setRedirect] = useState(false)
   const classes = useStyles()
-  const history = useHistory()
 
   const newSongUri = 'http://localhost:8000/songs'
 
-
-
   const handleSubmit = async e => {
     let response;
-    // e.preventDefault()
+    e.preventDefault()
     let song = {
       title: title,
       album: album,
@@ -44,14 +40,17 @@ export default function AddSong() {
       genre: genre,
       releaseDate: releaseDate
     }
-    try {
-      // TODO properly implement redirect vis useHistory
-      response = await axios.post(newSongUri, song).then(() => history.push('/'))
-    } catch (error) {
-      console.log(error)
-    }
-    const content = response
-    console.log(content)
+      try {
+        // TODO properly implement redirect 
+        response = await axios.post(newSongUri, song)
+        .then(() => setRedirect(true))
+      } catch (error) {
+        console.log(error)
+      }
+      console.log(response)
+      if (redirect) {
+        return <Redirect to='/music' />
+      }
     }
 
   return (
