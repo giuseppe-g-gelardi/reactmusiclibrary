@@ -8,7 +8,7 @@ export default function AddSong() {
   const [genre, setGenre] = useState('')
   const [releaseDate, setReleaseDate] = useState('')
 
-  const newSongUri = 'http://localhost:3500/songs/new'
+  const newSongUri = 'http://localhost:8000/songs'
 
   const submit = async e => {
     let response;
