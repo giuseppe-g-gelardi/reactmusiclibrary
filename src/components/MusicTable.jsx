@@ -62,8 +62,31 @@ export default function MusicTable() {
   return (
 
       <Container>
+           <TextField 
+            label='Filter songs...'
+            className={classes.field}
+              onChange={e => {
+                setSearchTerm(e.target.value)
+              }}
+            />
         <Grid container spacing={3}>
-          {songList.map(song => (
+          {songList
+           // eslint-disable-next-line array-callback-return
+          .filter(val => {
+            let searchString = ''
+            for (let value of Object.entries(val)) {
+              searchString += `${value}\t`
+            }
+            if (searchTerm === '') {
+              return val
+            } else if (
+              searchString
+                .toLowerCase()
+                .includes(searchTerm.toLowerCase())
+            ) {
+              return val
+            }
+          }).map(song => (
             <Grid item key={song.id} sx={12} md={6} lg={4}> 
               <MusicCard song={song} handleDelete={handleDelete} />
             </Grid>
