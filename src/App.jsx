@@ -7,8 +7,16 @@ import AddSong from './components/AddSong'
 export default function App() {
 
   const [songList, setSongList] = useState([])
-  const dbUri = 'http://localhost:3500/songs/'
+
+  // express api
+  // const dbUri = 'http://localhost:3500/songs/'
+
+  // dCC api
   // const api = 'http://www.devcodecampmusiclibrary.com/'
+
+  //json server
+  const dbUri = 'http://localhost:8000/songs'
+
 
   useEffect(() => {
     getSongs()
@@ -22,7 +30,7 @@ export default function App() {
       axios.get(`${dbUri}`).then(
         response => {
           setSongList(response.data)
-          // console.log(response)
+          console.log(response)
         },
         err => {
           console.log(err)
