@@ -12,7 +12,7 @@ export default function AddSong() {
 
   const submit = async e => {
     let response;
-    e.preventDefault()
+    // e.preventDefault()
     let song = {
       title: title,
       album: album,

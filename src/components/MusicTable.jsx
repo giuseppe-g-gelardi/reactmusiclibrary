@@ -9,10 +9,11 @@ export default function MusicTable({ songList }) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     setSongs(songList)
-  }) // does not need dependency array?
+  }) // ? does not need dependency array?
 
   return (
     <div>
+  
       <div id='table-filter' className='song-table'>
         <input
           type='text'

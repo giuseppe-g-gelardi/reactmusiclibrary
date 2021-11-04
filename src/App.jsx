@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom/'
 import MusicTable from './components/MusicTable'
 import Navbar from './components/Navbar'
 import AddSong from './components/AddSong'
-
-
 
 export default function App() {
 
@@ -25,7 +22,7 @@ export default function App() {
       axios.get(`${dbUri}`).then(
         response => {
           setSongList(response.data)
-          console.log(response)
+          // console.log(response)
         },
         err => {
           console.log(err)
@@ -35,7 +32,6 @@ export default function App() {
       console.log(e)
     }
   }
-
 
   return (
     <>
