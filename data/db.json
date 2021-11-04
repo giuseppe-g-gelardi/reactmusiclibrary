@@ -1,0 +1,466 @@
+[{
+  "_id": {
+    "$oid": "6181bffa3c796756689ddae3"
+  },
+  "title": "hey joe",
+  "album": "are you experienced",
+  "artist": "jimi hendrix",
+  "genre": "blues rock",
+  "releaseDate": "11/xx/1965",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c21bb8d9289ab503a40a"
+  },
+  "title": "Drive My Car",
+  "album": "Rubber Soul",
+  "artist": "The Beatles",
+  "genre": "Folk Rock",
+  "releaseDate": "12/03/1965",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c230b8d9289ab503a40c"
+  },
+  "title": "Norwegian Wood",
+  "album": "Rubber Soul",
+  "artist": "The Beatles",
+  "genre": "Folk Rock",
+  "releaseDate": "12/03/1965",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c241b8d9289ab503a40e"
+  },
+  "title": "You Won't See Me",
+  "album": "Rubber Soul",
+  "artist": "The Beatles",
+  "genre": "Folk Rock",
+  "releaseDate": "12/03/1965",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c251b8d9289ab503a410"
+  },
+  "title": "Nowhere Man",
+  "album": "Rubber Soul",
+  "artist": "The Beatles",
+  "genre": "Folk Rock",
+  "releaseDate": "12/03/1965",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c264b8d9289ab503a412"
+  },
+  "title": "Think For Yourself",
+  "album": "Rubber Soul",
+  "artist": "The Beatles",
+  "genre": "Folk Rock",
+  "releaseDate": "12/03/1965",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c281b8d9289ab503a414"
+  },
+  "title": "The Word",
+  "album": "Rubber Soul",
+  "artist": "The Beatles",
+  "genre": "Folk Rock",
+  "releaseDate": "12/03/1965",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c28eb8d9289ab503a416"
+  },
+  "title": "Michelle",
+  "album": "Rubber Soul",
+  "artist": "The Beatles",
+  "genre": "Folk Rock",
+  "releaseDate": "12/03/1965",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c29bb8d9289ab503a418"
+  },
+  "title": "What Goes On",
+  "album": "Rubber Soul",
+  "artist": "The Beatles",
+  "genre": "Folk Rock",
+  "releaseDate": "12/03/1965",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c2c5b8d9289ab503a41a"
+  },
+  "title": "Girl",
+  "album": "Rubber Soul",
+  "artist": "The Beatles",
+  "genre": "Folk Rock",
+  "releaseDate": "12/03/1965",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c2e5b8d9289ab503a41c"
+  },
+  "title": "I'm Looking Through You",
+  "album": "Rubber Soul",
+  "artist": "The Beatles",
+  "genre": "Folk Rock",
+  "releaseDate": "12/03/1965",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c2efb8d9289ab503a41e"
+  },
+  "title": "In My Life",
+  "album": "Rubber Soul",
+  "artist": "The Beatles",
+  "genre": "Folk Rock",
+  "releaseDate": "12/03/1965",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c2ffb8d9289ab503a420"
+  },
+  "title": "Wait",
+  "album": "Rubber Soul",
+  "artist": "The Beatles",
+  "genre": "Folk Rock",
+  "releaseDate": "12/03/1965",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c30db8d9289ab503a422"
+  },
+  "title": "If I Needed Someone",
+  "album": "Rubber Soul",
+  "artist": "The Beatles",
+  "genre": "Folk Rock",
+  "releaseDate": "12/03/1965",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c344b8d9289ab503a424"
+  },
+  "title": "Run For Your Life",
+  "album": "Rubber Soul",
+  "artist": "The Beatles",
+  "genre": "Folk Rock",
+  "releaseDate": "12/03/1965",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c352b8d9289ab503a426"
+  },
+  "title": "The District Sleeps Alone Tonight",
+  "album": "Give Up",
+  "artist": "The Postal Service",
+  "genre": "Alternative Indie",
+  "releaseDate": "02/18/2003",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c35eb8d9289ab503a428"
+  },
+  "title": "Such Great Heights",
+  "album": "Give Up",
+  "artist": "The Postal Service",
+  "genre": "Alternative Indie",
+  "releaseDate": "02/18/2003",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c36ab8d9289ab503a42a"
+  },
+  "title": "Sleeping In",
+  "album": "Give Up",
+  "artist": "The Postal Service",
+  "genre": "Alternative Indie",
+  "releaseDate": "02/18/2003",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c377b8d9289ab503a42c"
+  },
+  "title": "Nothing Better",
+  "album": "Give Up",
+  "artist": "The Postal Service",
+  "genre": "Alternative Indie",
+  "releaseDate": "02/18/2003",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c380b8d9289ab503a42e"
+  },
+  "title": "Recycled Air",
+  "album": "Give Up",
+  "artist": "The Postal Service",
+  "genre": "Alternative Indie",
+  "releaseDate": "02/18/2003",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c3aab8d9289ab503a430"
+  },
+  "title": "Clark Gable",
+  "album": "Give Up",
+  "artist": "The Postal Service",
+  "genre": "Alternative Indie",
+  "releaseDate": "02/18/2003",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c3b3b8d9289ab503a432"
+  },
+  "title": "We Will Become Silhouettes",
+  "album": "Give Up",
+  "artist": "The Postal Service",
+  "genre": "Alternative Indie",
+  "releaseDate": "02/18/2003",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c3e1b8d9289ab503a434"
+  },
+  "title": "This Place Is a Prison",
+  "album": "Give Up",
+  "artist": "The Postal Service",
+  "genre": "Alternative Indie",
+  "releaseDate": "02/18/2003",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c417b8d9289ab503a436"
+  },
+  "title": "Brand New Colony",
+  "album": "Give Up",
+  "artist": "The Postal Service",
+  "genre": "Alternative Indie",
+  "releaseDate": "02/18/2003",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181c420b8d9289ab503a438"
+  },
+  "title": "Natural Anthem",
+  "album": "Give Up",
+  "artist": "The Postal Service",
+  "genre": "Alternative Indie",
+  "releaseDate": "02/18/2003",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181cb29aeffe5e34a4aeaad"
+  },
+  "title": "voodoo child",
+  "album": "electric ladyland",
+  "artist": "jimi hendrix",
+  "genre": "psychedelic rock",
+  "releaseDate": "10/16/1968",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181f066aeffe5e34a4aead5"
+  },
+  "title": "",
+  "album": "",
+  "artist": "",
+  "genre": "",
+  "releaseDate": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181f07faeffe5e34a4aead7"
+  },
+  "title": "",
+  "album": "",
+  "artist": "",
+  "genre": "",
+  "releaseDate": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181f081aeffe5e34a4aead9"
+  },
+  "title": "",
+  "album": "",
+  "artist": "",
+  "genre": "",
+  "releaseDate": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181f093aeffe5e34a4aeadb"
+  },
+  "title": "",
+  "album": "",
+  "artist": "",
+  "genre": "",
+  "releaseDate": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181f09baeffe5e34a4aeade"
+  },
+  "title": "",
+  "album": "",
+  "artist": "",
+  "genre": "",
+  "releaseDate": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181f15daeffe5e34a4aeae0"
+  },
+  "title": "",
+  "album": "",
+  "artist": "",
+  "genre": "",
+  "releaseDate": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181f165aeffe5e34a4aeae2"
+  },
+  "title": "",
+  "album": "",
+  "artist": "",
+  "genre": "",
+  "releaseDate": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181f1f5aeffe5e34a4aeae4"
+  },
+  "title": "",
+  "album": "",
+  "artist": "",
+  "genre": "",
+  "releaseDate": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181f627aeffe5e34a4aeae7"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181f62eaeffe5e34a4aeaea"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181f63caeffe5e34a4aeaed"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181f63faeffe5e34a4aeaef"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181f67faeffe5e34a4aeaf1"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181f7acaeffe5e34a4aeaf6"
+  },
+  "title": "texas flood",
+  "album": "texas flood",
+  "artist": "src",
+  "genre": "blues",
+  "releaseDate": "60s?",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6181fae2aeffe5e34a4aeaf9"
+  },
+  "title": "tightrope",
+  "album": "in step?",
+  "artist": "srv",
+  "genre": "blues",
+  "releaseDate": "60s?",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61832886b8cc8693242c90dc"
+  },
+  "title": "floater",
+  "album": "hot damn",
+  "artist": "every time i die",
+  "genre": "metalcore",
+  "releaseDate": "n/a",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "61832890b8cc8693242c90de"
+  },
+  "title": "floater",
+  "album": "hot damn",
+  "artist": "every time i die",
+  "genre": "metalcore",
+  "releaseDate": "n/a",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "618328a3b8cc8693242c90e0"
+  },
+  "title": "floater",
+  "album": "hot damn",
+  "artist": "every time i die",
+  "genre": "metalcore",
+  "releaseDate": "n/a",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "618328b9b8cc8693242c90e3"
+  },
+  "title": "",
+  "album": "",
+  "artist": "",
+  "genre": "",
+  "releaseDate": "",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "618328d3b8cc8693242c90e6"
+  },
+  "title": "call me maybe",
+  "album": "no idea",
+  "artist": "carley rae",
+  "genre": "awesome",
+  "releaseDate": "a while ago",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "618328feb8cc8693242c91c0"
+  },
+  "title": "another new song",
+  "album": "2nd album",
+  "artist": "garage band",
+  "genre": "trash",
+  "releaseDate": "yesterday",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6183294eb8cc8693242c95ca"
+  },
+  "title": "asdf",
+  "album": "asdf",
+  "artist": "asdf",
+  "genre": "asdf",
+  "releaseDate": "asdf",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6183296ab8cc8693242c95cd"
+  },
+  "title": "a2w3e4fvw",
+  "album": "4yweey ",
+  "artist": "xcyfj",
+  "genre": "cgyj d",
+  "releaseDate": "4s5s",
+  "__v": 0
+}]
