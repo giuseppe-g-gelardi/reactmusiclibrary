@@ -46,13 +46,15 @@ export default function MusicTable() {
 
   return (
       <Container>
-        <TextField 
-          label='Filter songs...'
-          className={classes.field}
-            onChange={e => {
-              setSearchTerm(e.target.value)
-            }}
-          />
+          <Container className={classes.field}>
+          <TextField 
+            label='Filter songs...'
+            className={classes.field}
+              onChange={e => {
+                setSearchTerm(e.target.value)
+              }}
+            />
+        </Container>
         <Grid container spacing={3}>
           {songList
            // eslint-disable-next-line array-callback-return

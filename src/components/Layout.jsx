@@ -56,7 +56,6 @@ export default function Layout({ children }) {
   const history = useHistory()
   const location = useLocation()
 
-
   const menuItems = [
     {
       text: 'My Music',
