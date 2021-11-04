@@ -247,6 +247,46 @@
       "genre": "trash",
       "releaseDate": "yesterday",
       "id": "618328feb8cc8693242c91c0"
+    },
+    {
+      "title": "",
+      "album": "",
+      "artist": "",
+      "genre": "",
+      "releaseDate": "",
+      "id": "70MDmW3"
+    },
+    {
+      "title": "new title",
+      "album": "new album",
+      "artist": "new artist",
+      "genre": "shit genre",
+      "releaseDate": "today",
+      "id": "EkNjIzO"
+    },
+    {
+      "title": "",
+      "album": "",
+      "artist": "",
+      "genre": "",
+      "releaseDate": "",
+      "id": "qwSKE-c"
+    },
+    {
+      "title": "asdfasdf",
+      "album": "asdfasdf",
+      "artist": "asdf",
+      "genre": "asdfasdf",
+      "releaseDate": "asdfasdf",
+      "id": "eZmQ4o4"
+    },
+    {
+      "title": "1234",
+      "album": "1234",
+      "artist": "1234",
+      "genre": "1234",
+      "releaseDate": "1234",
+      "id": "7sO8-n4"
     }
   ]
 }
