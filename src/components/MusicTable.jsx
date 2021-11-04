@@ -3,10 +3,8 @@ import axios from 'axios'
 import { Table } from 'react-bootstrap'
 import TextField from '@mui/material/TextField'
 import { makeStyles } from '@material-ui/core/styles'
-
-
-// import { InputBase } from '@mui/material';
-
+import Button from '@material-ui/core/Button'
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles({
   field: {
@@ -19,11 +17,9 @@ const useStyles = makeStyles({
 export default function MusicTable() {
   const [searchTerm, setSearchTerm] = useState('')
   // const [songs, setSongs] = useState([])
-
   const [songList, setSongList] = useState([])
 
   const classes = useStyles()
-
 
   // express api
   // const dbUri = 'http://localhost:3500/songs/'
@@ -36,7 +32,6 @@ export default function MusicTable() {
   //json server
   const dbUri = 'http://localhost:8000/songs'
 
-
   useEffect(() => {
     getSongs()
   }, [])
@@ -46,7 +41,6 @@ export default function MusicTable() {
       await axios.get(`${dbUri}`).then(
         response => {
           setSongList(response.data)
-          console.log(response)
         }, err => {console.log(err)})
     } catch (e) {console.log(e)}
   }
@@ -62,8 +56,6 @@ export default function MusicTable() {
     setSongList(newSongs)
   }
 
-
-
   return (
     <div>
   
@@ -76,8 +68,6 @@ export default function MusicTable() {
             setSearchTerm(e.target.value)
           }}
         />
-
-
 
         <br />
         <div className='table'>
@@ -104,23 +94,31 @@ export default function MusicTable() {
                   } else if (
                     searchString
                       .toLowerCase()
-                      .includes(searchTerm.toLowerCase())
-                  ) {
+                      .includes(searchTerm.toLowerCase())) {
                     return val
                   }
                 })
                 .map((val, key) => {
                   return (
                     <tr key={key}>
-                    {/* {console.log(val._id.$oid)} */}
-
                       <td>{val.title}</td>
                       <td>{val.album}</td>
                       <td>{val.artist}</td>
                       <td>{val.genre}</td>
                       <td>{val.releaseDate}</td>
                       <td>
-                        <button onClick={() => handleDelete(val.id)}>delete</button>
+                   
+                        <Button
+                          className={classes.btn}
+                          onClick={() => handleDelete(val.id)}
+                          type='submit'
+                          color='secondary'
+                          variant='contained'
+                          endIcon={<DeleteIcon />}
+                        >
+                          Delete
+                        </Button> 
+                      
                       </td>
                     </tr>
                   )
@@ -132,3 +130,68 @@ export default function MusicTable() {
     </div>
   )
 }
+
+
+
+
+// <div>
+  
+// <div id='table-filter' className='song-table'>
+
+//   <TextField 
+//   label='Filter songs...'
+//   className={classes.field}
+//     onChange={e => {
+//       setSearchTerm(e.target.value)
+//     }}
+//   />
+
+//   <br />
+//   <div className='table'>
+//     <Table responsive striped bordered hover variant='light'>
+//       <thead>
+//         <tr>
+//           <th>Song Title</th>
+//           <th>Album</th>
+//           <th>Artist</th>
+//           <th> Genre</th>
+//           <th>Release Date</th>
+//         </tr>
+//       </thead>
+//       <tbody>
+//         {songList
+//           // eslint-disable-next-line array-callback-return
+//           .filter(val => {
+//             let searchString = ''
+//             for (let value of Object.entries(val)) {
+//               searchString += `${value}\t`
+//             }
+//             if (searchTerm === '') {
+//               return val
+//             } else if (
+//               searchString
+//                 .toLowerCase()
+//                 .includes(searchTerm.toLowerCase())
+//             ) {
+//               return val
+//             }
+//           })
+//           .map((val, key) => {
+//             return (
+//               <tr key={key}>
+//                 <td>{val.title}</td>
+//                 <td>{val.album}</td>
+//                 <td>{val.artist}</td>
+//                 <td>{val.genre}</td>
+//                 <td>{val.releaseDate}</td>
+//                 <td>
+//                   <button onClick={() => handleDelete(val.id)}>delete</button>
+//                 </td>
+//               </tr>
+//             )
+//           })}
+//       </tbody>
+//     </Table>
+//   </div>
+// </div>
+// </div>
