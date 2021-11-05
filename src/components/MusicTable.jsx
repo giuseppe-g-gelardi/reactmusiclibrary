@@ -12,9 +12,6 @@ const useStyles = makeStyles({
     marginBottom: 20,
     display: 'block',
   },
-  inputfield: {
-    background: "#44475a"
-  }
 })
 
 export default function MusicTable() {
@@ -52,8 +49,9 @@ export default function MusicTable() {
           <Container className={classes.field}>
           <TextField 
             label='Filter songs...'
-            className={classes.inputfield}
-
+            className={classes.field}
+            color='secondary'
+            variant='outlined'
               onChange={e => {
                 setSearchTerm(e.target.value)
               }}
@@ -83,3 +81,7 @@ export default function MusicTable() {
       </Container>
   )
 }
+
+  // inputfield: {
+  //   background: "#44475a"
+  // }

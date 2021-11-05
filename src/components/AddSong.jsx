@@ -8,20 +8,17 @@ import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
 import { makeStyles } from '@material-ui/core/styles'
 import TextField from '@mui/material/TextField'
 
-
 const useStyles = makeStyles({
   field: {
     marginTop: 20,
     marginBottom: 20,
     display: 'block',
   },
-  inputfield: {
-    background: "#44475a",
-  }
 })
 
 
 export default function AddSong() {
+
 
   const [title, setTitle] = useState('')
   const [album, setAlbum] = useState('')
@@ -59,9 +56,8 @@ export default function AddSong() {
   return (
 
     <Container>
-
       <Typography 
-          className={classes.title}
+          className={classes.field}
           variant='h6'
           color='textSecondary'
           component='h2'
@@ -71,10 +67,11 @@ export default function AddSong() {
         </Typography>
 
         <form noValidate autoComplete='off' onSubmit={handleSubmit}>
-
           <TextField
+            color='secondary'
+            style={{marginBottom: 20}}
             onChange={e => setTitle(e.target.value)} 
-            className={classes.inputfield}
+            className={classes.field}
             label='Song title'
             variant='outlined'
             fullWidth
@@ -82,8 +79,10 @@ export default function AddSong() {
           />
 
           <TextField
+            color='secondary'
+            style={{marginBottom: 20}}
             onChange={e => setArtist(e.target.value)} 
-            className={classes.inputfield}
+            className={classes.field}
             label='Artist Name'
             variant='outlined'
             fullWidth
@@ -91,8 +90,10 @@ export default function AddSong() {
           />    
 
           <TextField
+            color='secondary'
+            style={{marginBottom: 20}}
             onChange={e => setAlbum(e.target.value)} 
-            className={classes.inputfield}
+            className={classes.field}
             label='Album Title'
             variant='outlined'
             fullWidth
@@ -100,8 +101,10 @@ export default function AddSong() {
           /> 
 
           <TextField
+            color='secondary'
+            style={{marginBottom: 20}}
             onChange={e => setGenre(e.target.value)} 
-            className={classes.inputfield}
+            className={classes.field}
             label='Genre'
             variant='outlined'
             fullWidth
@@ -109,8 +112,10 @@ export default function AddSong() {
           />  
 
           <TextField
+            color='secondary'
+            style={{marginBottom: 20}}
             onChange={e => setReleaseDate(e.target.value)} 
-            className={classes.inputfield}
+            className={classes.field}
             label='Release Date'
             variant='outlined'
             fullWidth
@@ -118,7 +123,6 @@ export default function AddSong() {
           />      
 
           <Button
-            className={classes.btn}
             type='submit'
             color='secondary'
             variant='contained'
@@ -126,9 +130,7 @@ export default function AddSong() {
           >
             Submit
           </Button>
-
         </form>
-
     </Container>
 
   )

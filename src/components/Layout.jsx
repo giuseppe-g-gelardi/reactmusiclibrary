@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { makeStyles, ThemeProvider, createTheme } from '@material-ui/core'
+import React from 'react'
+import { makeStyles } from '@material-ui/core'
 import Drawer from '@material-ui/core/Drawer'
 import Typography from '@material-ui/core/Typography'
 import List from '@material-ui/core/List'
@@ -12,7 +12,7 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import { format } from 'date-fns'
 import Switch from '@material-ui/core/Switch'
-import { purple, pink } from '@material-ui/core/colors'
+// import { purple, pink } from '@material-ui/core/colors'
 
 
 
@@ -22,35 +22,39 @@ const drawerWidth = 240
 const useStyles = makeStyles((theme) => {
   return {
     page: {
-      background: '#282a36',
+      background: '#f9f9f9',
       width: '100%',
-      padding: theme.spacing(3)
-    },
-    drawer: {
-      width: drawerWidth
-    },
-    drawerPaper: {
-      width: drawerWidth
+      padding: theme.spacing(3),
     },
     root: {
-      display: 'flex'
+      display: 'flex',
+    },
+    drawer: {
+      width: drawerWidth,
+    },
+    drawerPaper: {
+      width: drawerWidth,
+    },
+    active: {
+      background: '#f4f4f4'
     },
     title: {
-      padding: theme.spacing(2)
+      padding: theme.spacing(2),
     },
-    appbar: {
+    appBar: {
       width: `calc(100% - ${drawerWidth}px)`,
-      background: '#44475a'
+      marginLeft: drawerWidth,
+    },
+    date: {
+      flexGrow: 1
     },
     toolbar: theme.mixins.toolbar,
-    date: {
-      flexGrow: 1 // will take up all space horizontal to its right
-    },
     avatar: {
       marginLeft: theme.spacing(2)
-    },
+    }
   }
 })
+
 
 
 
@@ -77,13 +81,16 @@ export default function Layout({ children }) {
     <div className={classes.root}>
       {/* app bar */}
       <AppBar
-        className={classes.appbar}
+        position="fixed" 
+        className={classes.appBar}
         elevation={0}
+        color="primary"
       >
         <Toolbar>
           <Typography className={classes.date}>
             Today is {format(new Date(), 'MMMM do, Y')}
           </Typography>
+
 {/* theme toggle switch */}
             <Switch/>
 {/* theme toggle switch */}
@@ -128,3 +135,37 @@ export default function Layout({ children }) {
     </div>
   )
 }
+
+
+// const useStyles = makeStyles((theme) => {
+//   return {
+//     page: {
+//       background: '#282a36',
+//       width: '100%',
+//       padding: theme.spacing(3)
+//     },
+//     drawer: {
+//       width: drawerWidth
+//     },
+//     drawerPaper: {
+//       width: drawerWidth
+//     },
+//     root: {
+//       display: 'flex'
+//     },
+//     title: {
+//       padding: theme.spacing(2)
+//     },
+//     appbar: {
+//       width: `calc(100% - ${drawerWidth}px)`,
+//       background: '#44475a'
+//     },
+//     toolbar: theme.mixins.toolbar,
+//     date: {
+//       flexGrow: 1 // will take up all space horizontal to its right
+//     },
+//     avatar: {
+//       marginLeft: theme.spacing(2)
+//     },
+//   }
+// })
