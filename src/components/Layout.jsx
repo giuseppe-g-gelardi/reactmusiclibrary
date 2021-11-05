@@ -1,5 +1,5 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core'
+import React, { useState } from 'react'
+import { makeStyles, ThemeProvider, createTheme } from '@material-ui/core'
 import Drawer from '@material-ui/core/Drawer'
 import Typography from '@material-ui/core/Typography'
 import List from '@material-ui/core/List'
@@ -11,14 +11,18 @@ import { useHistory, useLocation } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import { format } from 'date-fns'
-import Avatar from '@material-ui/core/Avatar'
+import Switch from '@material-ui/core/Switch'
+import { purple, pink } from '@material-ui/core/colors'
+
+
+
 
 const drawerWidth = 240
 
 const useStyles = makeStyles((theme) => {
   return {
     page: {
-      // background: '#f9f9f9',
+      background: '#282a36',
       width: '100%',
       padding: theme.spacing(3)
     },
@@ -31,14 +35,12 @@ const useStyles = makeStyles((theme) => {
     root: {
       display: 'flex'
     },
-    // active: {
-    //   background: '#f4f4f4'
-    // },
     title: {
       padding: theme.spacing(2)
     },
     appbar: {
-      width: `calc(100% - ${drawerWidth}px)`
+      width: `calc(100% - ${drawerWidth}px)`,
+      background: '#44475a'
     },
     toolbar: theme.mixins.toolbar,
     date: {
@@ -46,12 +48,13 @@ const useStyles = makeStyles((theme) => {
     },
     avatar: {
       marginLeft: theme.spacing(2)
-    }
+    },
   }
 })
 
-export default function Layout({ children }) {
 
+
+export default function Layout({ children }) {
   const classes = useStyles()
   const history = useHistory()
   const location = useLocation()
@@ -69,6 +72,7 @@ export default function Layout({ children }) {
     },
   ]
 
+ 
   return (
     <div className={classes.root}>
       {/* app bar */}
@@ -80,27 +84,26 @@ export default function Layout({ children }) {
           <Typography className={classes.date}>
             Today is {format(new Date(), 'MMMM do, Y')}
           </Typography>
-{/* ! add theme toggle */} 
-          <Typography>
-            User
-          </Typography>
-          <Avatar src='/221584.jpg' className={classes.avatar} />
+{/* theme toggle switch */}
+            <Switch/>
+{/* theme toggle switch */}
+
+
         </Toolbar>
-{/* add theme toggle */}
       </AppBar>
 
    {/* side drawer */}
-   <Drawer
-        className={classes.drawer}
-        variant='permanent'
-        anchor='left'
-        classes={{ paper: classes.drawerPaper }}
-      >
-        <div>
-          <Typography variant='h5' className={classes.title}>
-            Music
-          </Typography>
-        </div>
+    <Drawer
+      className={classes.drawer}
+      variant='permanent'
+      anchor='left'
+      classes={{ paper: classes.drawerPaper }}
+    >
+      <div>
+        <Typography variant='h5' className={classes.title}>
+          Music
+        </Typography>
+      </div>
 
 
         {/* list / links */}

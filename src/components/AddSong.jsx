@@ -13,7 +13,10 @@ const useStyles = makeStyles({
   field: {
     marginTop: 20,
     marginBottom: 20,
-    display: 'block'
+    display: 'block',
+  },
+  inputfield: {
+    background: "#44475a",
   }
 })
 
@@ -71,7 +74,7 @@ export default function AddSong() {
 
           <TextField
             onChange={e => setTitle(e.target.value)} 
-            className={classes.field}
+            className={classes.inputfield}
             label='Song title'
             variant='outlined'
             fullWidth
@@ -80,7 +83,7 @@ export default function AddSong() {
 
           <TextField
             onChange={e => setArtist(e.target.value)} 
-            className={classes.field}
+            className={classes.inputfield}
             label='Artist Name'
             variant='outlined'
             fullWidth
@@ -89,7 +92,7 @@ export default function AddSong() {
 
           <TextField
             onChange={e => setAlbum(e.target.value)} 
-            className={classes.field}
+            className={classes.inputfield}
             label='Album Title'
             variant='outlined'
             fullWidth
@@ -98,7 +101,7 @@ export default function AddSong() {
 
           <TextField
             onChange={e => setGenre(e.target.value)} 
-            className={classes.field}
+            className={classes.inputfield}
             label='Genre'
             variant='outlined'
             fullWidth
@@ -107,7 +110,7 @@ export default function AddSong() {
 
           <TextField
             onChange={e => setReleaseDate(e.target.value)} 
-            className={classes.field}
+            className={classes.inputfield}
             label='Release Date'
             variant='outlined'
             fullWidth
