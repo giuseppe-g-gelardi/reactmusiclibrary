@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom/'
 import { createTheme, ThemeProvider } from '@material-ui/core/styles'
-import { purple } from '@material-ui/core/colors'
+import { purple, pink } from '@material-ui/core/colors'
 import MusicTable from './components/MusicTable'
 import AddSong from './components/AddSong'
 import Layout from './components/Layout'
@@ -11,6 +11,9 @@ const lightTheme = createTheme({
     type: 'light',
     primary: {
       main: '#fefefe'
+    },
+    active: {
+      background: '#f4f4f4'
     },
     secondary: purple
   },
@@ -23,22 +26,25 @@ const lightTheme = createTheme({
   }
 })
 
-// const darkTheme = createTheme({
-//   palette: {
-//     type: 'dark',
-//     primary: {
-//       main: '#55555'
-//     },
-//     secondary: pink
-//   },
-//   typography: {
-//     fontFamily: 'Quicksand',
-//     fontWeightLight: 400,
-//     fontWeightRegular: 500,
-//     fontWeightMedium:600,
-//     fontWeightBold: 700,
-//   }
-// })
+const darkTheme = createTheme({
+  palette: {
+    type: 'dark',
+    primary: {
+      main: '#55555'
+    },
+    active: {
+      background: '#555555'
+    },
+    secondary: pink
+  },
+  typography: {
+    fontFamily: 'Quicksand',
+    fontWeightLight: 400,
+    fontWeightRegular: 500,
+    fontWeightMedium:600,
+    fontWeightBold: 700,
+  }
+})
 
 // const theme = createTheme({
 //   palette: {
@@ -100,11 +106,14 @@ const lightTheme = createTheme({
 // })
 
 export default function App() {
+
+  const [theme, setTheme] = useState(lightTheme)
+
  
   return (
-    <ThemeProvider theme={lightTheme}>
+    <ThemeProvider theme={theme}>
       <Router>
-        <Layout >
+        <Layout theme={theme} setTheme={setTheme} lightTheme={lightTheme} darkTheme={darkTheme}>
           <Switch>
             <Route exact path='/'>
               <AddSong />

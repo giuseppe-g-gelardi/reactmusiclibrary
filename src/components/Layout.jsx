@@ -1,5 +1,5 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core'
+import React, { useState, useEffect } from 'react'
+import { makeStyles, Switch } from '@material-ui/core'
 import Drawer from '@material-ui/core/Drawer'
 import Typography from '@material-ui/core/Typography'
 import List from '@material-ui/core/List'
@@ -11,11 +11,6 @@ import { useHistory, useLocation } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import { format } from 'date-fns'
-import Switch from '@material-ui/core/Switch'
-// import { purple, pink } from '@material-ui/core/colors'
-
-
-
 
 const drawerWidth = 240
 
@@ -55,14 +50,29 @@ const useStyles = makeStyles((theme) => {
   }
 })
 
-
-
-
-export default function Layout({ children }) {
+export default function Layout({ children, setTheme, lightTheme, darkTheme, theme }) {
   const classes = useStyles()
   const history = useHistory()
   const location = useLocation()
+  const [checked, setChecked] = useState(false)
 
+  // useEffect(() => {
+  //   handleChange()
+  // })
+
+  const handleChange = (e) => {
+    setChecked(e.target.checked)
+    setTheme(darkTheme)
+
+    if (checked) {
+      window.location.reload()
+    }
+  }
+
+ 
+
+
+  
   const menuItems = [
     {
       text: 'My Music',
@@ -76,10 +86,8 @@ export default function Layout({ children }) {
     },
   ]
 
- 
   return (
     <div className={classes.root}>
-      {/* app bar */}
       <AppBar
         position="fixed" 
         className={classes.appBar}
@@ -91,10 +99,34 @@ export default function Layout({ children }) {
             Today is {format(new Date(), 'MMMM do, Y')}
           </Typography>
 
-{/* theme toggle switch */}
-            <Switch/>
+
+
 {/* theme toggle switch */}
 
+              {/* <Switch 
+              onChange={handleChange}
+              checked={checked}
+              /> */}
+
+              {/* <Switch 
+              checked={setTheme(lightTheme)}
+              onChange={() => setTheme(!darkTheme)}
+              /> */}
+
+              {/* <Switch 
+              checked={setTheme(lightTheme)}
+              onChange={() => !checked ? setTheme(darkTheme) : setTheme(lightTheme)}
+              /> */}
+
+              <Switch 
+              checked={setTheme(lightTheme)}
+              onChange={handleChange}
+              />
+
+{/* theme toggle switch */}
+
+
+        
 
         </Toolbar>
       </AppBar>
