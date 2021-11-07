@@ -16,11 +16,10 @@ const drawerWidth = 240
 
 const useStyles = makeStyles((theme) => {
   return {
-    page: {
-      background: '#f9f9f9',
-      width: '100%',
-      padding: theme.spacing(3),
-    },
+    // page: {
+    //   width: '100%',
+    //   padding: theme.spacing(3),
+    // },
     root: {
       display: 'flex',
     },
@@ -31,7 +30,7 @@ const useStyles = makeStyles((theme) => {
       width: drawerWidth,
     },
     active: {
-      background: '#f4f4f4'
+      background: '#282A36'
     },
     title: {
       padding: theme.spacing(2),
@@ -39,6 +38,7 @@ const useStyles = makeStyles((theme) => {
     appBar: {
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
+      // height: 72
     },
     date: {
       flexGrow: 1
@@ -74,16 +74,16 @@ export default function Layout({ children }) {
       <AppBar
         position="fixed" 
         className={classes.appBar}
-        elevation={0}
+        // elevation={0}
         color="primary"
       >
         <Toolbar>
           <Typography className={classes.date}>
             Today is {format(new Date(), 'MMMM do, Y')}
           </Typography>
-{/* theme toggle switch */}
+              {/* theme toggle switch */}
               <Switch />
-{/* theme toggle switch */}
+              {/* theme toggle switch */}
         </Toolbar>
       </AppBar>
    {/* side drawer */}

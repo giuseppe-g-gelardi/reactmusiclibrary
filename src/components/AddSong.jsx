@@ -8,12 +8,19 @@ import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
 import { makeStyles } from '@material-ui/core/styles'
 import TextField from '@mui/material/TextField'
 
-const useStyles = makeStyles({
-  field: {
-    marginTop: 20,
-    marginBottom: 20,
-    display: 'block',
-  },
+  const useStyles = makeStyles({
+    field: {
+      marginTop: 20,
+      marginBottom: 20,
+      display: 'block',
+      background: '#44475a'
+    },
+    text: {
+      marginTop: 20,
+      marginBottom: 20,
+      display: 'block',
+      color: '#bd93f9'
+    }
 })
 
 
@@ -48,16 +55,17 @@ export default function AddSong() {
         console.log(error)
       }
       console.log(response)
-      if (redirect) {
-        return <Redirect to='/music' />
-      }
-    }
+  }
 
+  if (redirect) {
+    return <Redirect to='/music' />
+  }
+  
   return (
 
     <Container>
       <Typography 
-          className={classes.field}
+          className={classes.text}
           variant='h6'
           color='textSecondary'
           component='h2'
