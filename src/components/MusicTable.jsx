@@ -11,6 +11,14 @@ const useStyles = makeStyles({
     marginTop: 20,
     marginBottom: 20,
     display: 'block',
+
+  },
+  text: {
+    marginTop: 20,
+    marginBottom: 20,
+    display: 'block',
+    color: '#bd93f9',
+    background: '#44475a',
   },
 })
 
@@ -49,7 +57,7 @@ export default function MusicTable() {
           <Container className={classes.field}>
           <TextField 
             label='Filter songs...'
-            className={classes.field}
+            className={classes.text}
             color='secondary'
             variant='outlined'
               onChange={e => {

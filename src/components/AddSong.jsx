@@ -13,19 +13,17 @@ import TextField from '@mui/material/TextField'
       marginTop: 20,
       marginBottom: 20,
       display: 'block',
-      background: '#44475a'
+      background: '#44475a',
     },
     text: {
       marginTop: 20,
       marginBottom: 20,
       display: 'block',
-      color: '#bd93f9'
-    }
+      color: '#bd93f9',
+    },
 })
 
-
 export default function AddSong() {
-
 
   const [title, setTitle] = useState('')
   const [album, setAlbum] = useState('')

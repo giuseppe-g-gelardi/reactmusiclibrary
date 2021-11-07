@@ -55,7 +55,6 @@ export default function Layout({ children }) {
   const history = useHistory()
   const location = useLocation()
 
-
   const menuItems = [
     {
       text: 'My Music',
@@ -82,7 +81,7 @@ export default function Layout({ children }) {
             Today is {format(new Date(), 'MMMM do, Y')}
           </Typography>
               {/* theme toggle switch */}
-              <Switch />
+              {/* <Switch /> no worky */}
               {/* theme toggle switch */}
         </Toolbar>
       </AppBar>

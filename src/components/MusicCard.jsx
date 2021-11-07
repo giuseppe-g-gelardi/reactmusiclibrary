@@ -4,22 +4,12 @@ import CardHeader from '@material-ui/core/CardHeader'
 import CardContent from '@material-ui/core/CardContent'
 import { Avatar, IconButton, makeStyles, Typography } from '@material-ui/core'
 import { DeleteOutline } from '@material-ui/icons'
-import { blue, green, pink, yellow } from '@material-ui/core/colors'
+
+
 
 const useStyles = makeStyles({
   avatar: {
-    backgroundColor: (song) => {
-      if (song.category === 'work') {
-        return yellow[700]
-      }
-      if (song.category === 'money') {
-        return green[500]
-      }
-      if (song.category === 'todos') {
-        return pink[700]
-      }
-      return blue[500]
-    }
+    backgroundColor: '#f1fa8c'
   }
 })
 
@@ -38,7 +28,7 @@ export default function MusicCard({ song, handleDelete }) {
           }
           action={
             <IconButton onClick={() => handleDelete(song.id)}>
-              <DeleteOutline />
+              <DeleteOutline style={{color: '#ffb86c'}}/>
             </IconButton>
           } 
           title={song.title}
