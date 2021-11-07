@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { makeStyles, Switch } from '@material-ui/core'
 import Drawer from '@material-ui/core/Drawer'
 import Typography from '@material-ui/core/Typography'
@@ -56,10 +56,6 @@ export default function Layout({ children, setTheme, lightTheme, darkTheme, them
   const location = useLocation()
   const [checked, setChecked] = useState(false)
 
-  // useEffect(() => {
-  //   handleChange()
-  // })
-
   const handleChange = (e) => {
     setChecked(e.target.checked)
     setTheme(darkTheme)
@@ -68,10 +64,6 @@ export default function Layout({ children, setTheme, lightTheme, darkTheme, them
       window.location.reload()
     }
   }
-
- 
-
-
   
   const menuItems = [
     {
@@ -98,39 +90,14 @@ export default function Layout({ children, setTheme, lightTheme, darkTheme, them
           <Typography className={classes.date}>
             Today is {format(new Date(), 'MMMM do, Y')}
           </Typography>
-
-
-
 {/* theme toggle switch */}
-
-              {/* <Switch 
-              onChange={handleChange}
-              checked={checked}
-              /> */}
-
-              {/* <Switch 
-              checked={setTheme(lightTheme)}
-              onChange={() => setTheme(!darkTheme)}
-              /> */}
-
-              {/* <Switch 
-              checked={setTheme(lightTheme)}
-              onChange={() => !checked ? setTheme(darkTheme) : setTheme(lightTheme)}
-              /> */}
-
               <Switch 
               checked={setTheme(lightTheme)}
               onChange={handleChange}
               />
-
 {/* theme toggle switch */}
-
-
-        
-
         </Toolbar>
       </AppBar>
-
    {/* side drawer */}
     <Drawer
       className={classes.drawer}
@@ -143,8 +110,6 @@ export default function Layout({ children, setTheme, lightTheme, darkTheme, them
           Music
         </Typography>
       </div>
-
-
         {/* list / links */}
         <List>
           {menuItems.map(item => (

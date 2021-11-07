@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom/'
 import { createTheme, ThemeProvider } from '@material-ui/core/styles'
+import CssBaseline from '@material-ui/core/CssBaseline';
 import { purple, pink } from '@material-ui/core/colors'
 import MusicTable from './components/MusicTable'
 import AddSong from './components/AddSong'
@@ -112,6 +113,7 @@ export default function App() {
  
   return (
     <ThemeProvider theme={theme}>
+      <CssBaseline />
       <Router>
         <Layout theme={theme} setTheme={setTheme} lightTheme={lightTheme} darkTheme={darkTheme}>
           <Switch>
