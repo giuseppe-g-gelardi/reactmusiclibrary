@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { makeStyles, Switch } from '@material-ui/core'
 import Drawer from '@material-ui/core/Drawer'
 import Typography from '@material-ui/core/Typography'
@@ -50,21 +50,12 @@ const useStyles = makeStyles((theme) => {
   }
 })
 
-export default function Layout({ children, setTheme, lightTheme, darkTheme, theme }) {
+export default function Layout({ children }) {
   const classes = useStyles()
   const history = useHistory()
   const location = useLocation()
-  const [checked, setChecked] = useState(false)
 
-  const handleChange = (e) => {
-    setChecked(e.target.checked)
-    setTheme(darkTheme)
 
-    if (checked) {
-      window.location.reload()
-    }
-  }
-  
   const menuItems = [
     {
       text: 'My Music',
@@ -91,10 +82,7 @@ export default function Layout({ children, setTheme, lightTheme, darkTheme, them
             Today is {format(new Date(), 'MMMM do, Y')}
           </Typography>
 {/* theme toggle switch */}
-              <Switch 
-              checked={setTheme(lightTheme)}
-              onChange={handleChange}
-              />
+              <Switch />
 {/* theme toggle switch */}
         </Toolbar>
       </AppBar>
@@ -132,37 +120,3 @@ export default function Layout({ children, setTheme, lightTheme, darkTheme, them
     </div>
   )
 }
-
-
-// const useStyles = makeStyles((theme) => {
-//   return {
-//     page: {
-//       background: '#282a36',
-//       width: '100%',
-//       padding: theme.spacing(3)
-//     },
-//     drawer: {
-//       width: drawerWidth
-//     },
-//     drawerPaper: {
-//       width: drawerWidth
-//     },
-//     root: {
-//       display: 'flex'
-//     },
-//     title: {
-//       padding: theme.spacing(2)
-//     },
-//     appbar: {
-//       width: `calc(100% - ${drawerWidth}px)`,
-//       background: '#44475a'
-//     },
-//     toolbar: theme.mixins.toolbar,
-//     date: {
-//       flexGrow: 1 // will take up all space horizontal to its right
-//     },
-//     avatar: {
-//       marginLeft: theme.spacing(2)
-//     },
-//   }
-// })
