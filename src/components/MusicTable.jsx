@@ -26,7 +26,7 @@ export default function MusicTable() {
   const [searchTerm, setSearchTerm] = useState('')
   const [songList, setSongList] = useState([])
   const classes = useStyles()
-  const dbUri = 'http://localhost:8000/songs'
+  // const dbUri = 'http://localhost:8000/songs'
   const api = 'http://localhost:3800/api/songs'
 
   useEffect(() => {

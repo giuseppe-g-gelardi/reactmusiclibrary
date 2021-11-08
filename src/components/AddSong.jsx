@@ -33,7 +33,7 @@ export default function AddSong() {
   const [redirect, setRedirect] = useState(false)
   const classes = useStyles()
 
-  const newSongUri = 'http://localhost:8000/songs'
+  // const newSongUri = 'http://localhost:8000/songs'
   const api = 'http://localhost:3800/api/songs'
 
   const handleSubmit = async e => {
