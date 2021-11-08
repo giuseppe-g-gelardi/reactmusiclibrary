@@ -16,10 +16,10 @@ const drawerWidth = 240
 
 const useStyles = makeStyles((theme) => {
   return {
-    // page: {
-    //   width: '100%',
-    //   padding: theme.spacing(3),
-    // },
+    page: {
+      width: '100%',
+      padding: theme.spacing(3),
+    },
     root: {
       display: 'flex',
     },
