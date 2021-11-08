@@ -27,6 +27,7 @@ export default function MusicTable() {
   const [songList, setSongList] = useState([])
   const classes = useStyles()
   const dbUri = 'http://localhost:8000/songs'
+  const api = 'http://localhost:3800/api/songs'
 
   useEffect(() => {
     getSongs()
@@ -34,7 +35,8 @@ export default function MusicTable() {
 
   const getSongs = async () => {
     try {
-      await axios.get(`${dbUri}`).then(
+      // await axios.get(`${dbUri}`).then(
+      await axios.get(api).then(
         response => {
           setSongList(response.data)
         }, err => {console.log(err)})
@@ -43,7 +45,8 @@ export default function MusicTable() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/songs/${id}`)
+      // await axios.delete(`http://localhost:8000/songs/${id}`)
+      await axios.delete(`api${id}`)
       getSongs()
     } catch (error) {
       console.log(error)

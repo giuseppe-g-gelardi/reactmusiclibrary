@@ -34,6 +34,7 @@ export default function AddSong() {
   const classes = useStyles()
 
   const newSongUri = 'http://localhost:8000/songs'
+  const api = 'http://localhost:3800/api/songs'
 
   const handleSubmit = async e => {
     let response;
@@ -47,7 +48,7 @@ export default function AddSong() {
     }
       try {
         // TODO properly implement redirect 
-        response = await axios.post(newSongUri, song)
+        response = await axios.post(api, song)
         .then(() => setRedirect(true))
       } catch (error) {
         console.log(error)
