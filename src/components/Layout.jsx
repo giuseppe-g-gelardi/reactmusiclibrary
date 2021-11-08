@@ -1,5 +1,5 @@
 import React from 'react'
-import { makeStyles, Switch } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core'
 import Drawer from '@material-ui/core/Drawer'
 import Typography from '@material-ui/core/Typography'
 import List from '@material-ui/core/List'
@@ -29,9 +29,9 @@ const useStyles = makeStyles((theme) => {
     drawerPaper: {
       width: drawerWidth,
     },
-    active: {
-      background: '#282A36'
-    },
+    // active: {
+    //   background: '#282A36'
+    // },
     title: {
       padding: theme.spacing(2),
     },
