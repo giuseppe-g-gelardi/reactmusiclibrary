@@ -42,7 +42,8 @@ const useStyles = makeStyles((theme) => {
       // height: 72
     },
     date: {
-      flexGrow: 1
+      flexGrow: 1,
+      color: '#fff'
     },
     toolbar: theme.mixins.toolbar,
     avatar: {
@@ -59,12 +60,12 @@ export default function Layout({ children }) {
   const menuItems = [
     {
       text: 'My Music',
-      icon: <SubjectOutlined color='secondary' />,
+      icon: <SubjectOutlined color='primary' />,
       path: '/music'
     },
     {
       text: 'Add Music',
-      icon: <AddCircleOutlineOutlined color='secondary' />,
+      icon: <AddCircleOutlineOutlined color='primary' />,
       path: '/'
     },
   ]
@@ -74,7 +75,6 @@ export default function Layout({ children }) {
       <AppBar
         position="fixed" 
         className={classes.appBar}
-        // elevation={0}
         color="primary"
       >
         <Toolbar>
