@@ -14,7 +14,12 @@ import TextField from '@mui/material/TextField'
       marginBottom: 20,
       display: 'block',
       background: '#32424A',
-      color: 'secondary'
+      // color: 'secondary'
+      input: {
+        "&::placeholder": {
+          color: 'red'
+        }
+      }
     },
     text: {
       marginTop: 20,
@@ -48,7 +53,6 @@ export default function AddSong() {
       releaseDate: releaseDate
     }
       try {
-        // TODO properly implement redirect 
         response = await axios.post(api, song)
         .then(() => setRedirect(true))
       } catch (error) {
@@ -77,8 +81,8 @@ export default function AddSong() {
 
         <form noValidate autoComplete='off' onSubmit={handleSubmit}>
           <TextField
-            color='secondary'
-            style={{marginBottom: 20, color: '#fff'}}
+            InputLabelProps={{style: {color: '#fff'}}}
+            style={{marginBottom: 20}}
             onChange={e => setTitle(e.target.value)} 
             className={classes.field}
             label='Song title'
@@ -88,7 +92,7 @@ export default function AddSong() {
           />
 
           <TextField
-            color='secondary'
+            InputLabelProps={{style: {color: '#fff'}}}
             style={{marginBottom: 20}}
             onChange={e => setArtist(e.target.value)} 
             className={classes.field}
@@ -99,7 +103,7 @@ export default function AddSong() {
           />    
 
           <TextField
-            color='secondary'
+            InputLabelProps={{style: {color: '#fff'}}}
             style={{marginBottom: 20}}
             onChange={e => setAlbum(e.target.value)} 
             className={classes.field}
@@ -110,7 +114,7 @@ export default function AddSong() {
           /> 
 
           <TextField
-            color='secondary'
+            InputLabelProps={{style: {color: '#fff'}}}
             style={{marginBottom: 20}}
             onChange={e => setGenre(e.target.value)} 
             className={classes.field}
@@ -121,7 +125,7 @@ export default function AddSong() {
           />  
 
           <TextField
-            color='secondary'
+            InputLabelProps={{style: {color: '#fff'}}}
             style={{marginBottom: 20}}
             onChange={e => setReleaseDate(e.target.value)} 
             className={classes.field}
