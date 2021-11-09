@@ -2,8 +2,8 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom/'
 import { ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline';
-import MusicTable from './components/MusicTable'
-import AddSong from './components/AddSong'
+import MusicTable from './pages/MusicTable'
+import AddSong from './pages/AddSong'
 import Layout from './components/Layout'
 import theme from './components/Theme/Theme';
 
