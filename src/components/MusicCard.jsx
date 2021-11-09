@@ -2,33 +2,23 @@ import React from 'react'
 import Card from '@material-ui/core/Card'
 import CardHeader from '@material-ui/core/CardHeader'
 import CardContent from '@material-ui/core/CardContent'
-import { Avatar, IconButton, makeStyles, Typography } from '@material-ui/core'
+import { Avatar, IconButton, Typography } from '@material-ui/core'
 import { DeleteOutline } from '@material-ui/icons'
-
-
-
-const useStyles = makeStyles({
-  avatar: {
-    backgroundColor: '#f1fa8c'
-  }
-})
 
 export default function MusicCard({ song, handleDelete }) {
 
-  const classes = useStyles(song)
-
   return (
     <div>
-      <Card elevation={3} className={classes.test}>
+      <Card elevation={3}>
         <CardHeader 
           avatar={
-            <Avatar className={classes.avatar}>
+            <Avatar>
               {song.artist[0]}
             </Avatar>
           }
           action={
             <IconButton onClick={() => handleDelete(song.id)}>
-              <DeleteOutline style={{color: '#ffb86c'}}/>
+              <DeleteOutline style={{color: '#f07178'}}/>
             </IconButton>
           } 
           title={song.title}

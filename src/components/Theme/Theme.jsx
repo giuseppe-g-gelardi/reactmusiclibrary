@@ -16,10 +16,14 @@ const theme = createTheme({
     },
     text: {
       primary: '#ffffff',
+      secondary: '#ffffff'
     },
     info: {
       main: '#2196f3',
     },
+    multilineColor: {
+      color: '#fff'
+    }
   },
   typography: {
     fontWeightLight: 400,

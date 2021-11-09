@@ -13,7 +13,8 @@ import TextField from '@mui/material/TextField'
       marginTop: 20,
       marginBottom: 20,
       display: 'block',
-      background: '#44475a',
+      background: '#32424A',
+      color: 'secondary'
     },
     text: {
       marginTop: 20,
@@ -66,7 +67,8 @@ export default function AddSong() {
       <Typography 
           className={classes.text}
           variant='h6'
-          color='textSecondary'
+          // color='textPrimary'
+          // color='textSecondary'
           component='h2'
           gutterBottom
         >
@@ -76,7 +78,7 @@ export default function AddSong() {
         <form noValidate autoComplete='off' onSubmit={handleSubmit}>
           <TextField
             color='secondary'
-            style={{marginBottom: 20}}
+            style={{marginBottom: 20, color: '#fff'}}
             onChange={e => setTitle(e.target.value)} 
             className={classes.field}
             label='Song title'
