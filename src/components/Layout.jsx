@@ -29,13 +29,14 @@ const useStyles = makeStyles((theme) => {
     drawerPaper: {
       width: drawerWidth,
     },
-    // active: {
-    //   background: '#282A36'
-    // },
+    active: {
+      background: '#263238'
+    },
     title: {
       padding: theme.spacing(2),
     },
     appBar: {
+      background: '#32424A',
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
       // height: 72
