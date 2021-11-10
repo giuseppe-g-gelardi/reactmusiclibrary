@@ -6,6 +6,7 @@ import MusicTable from './pages/MusicTable'
 import AddSong from './pages/AddSong'
 import Layout from './components/Layout'
 import theme from './components/Theme/Theme';
+import EditSong from './pages/EditSong';
 
 export default function App() {
 
@@ -20,6 +21,9 @@ export default function App() {
             </Route>
             <Route exact path='/music'>
               <MusicTable />
+            </Route>
+            <Route exact path='/music/:id'>
+              <EditSong />
             </Route>
           </Switch>
         </Layout>

@@ -39,7 +39,6 @@ const useStyles = makeStyles((theme) => {
       background: '#32424A',
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
-      // height: 72
     },
     date: {
       flexGrow: 1,

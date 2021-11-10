@@ -14,7 +14,6 @@ import TextField from '@mui/material/TextField'
       marginBottom: 20,
       display: 'block',
       background: '#32424A',
-      // color: 'secondary'
       input: {
         "&::placeholder": {
           color: 'red'
@@ -27,7 +26,7 @@ import TextField from '@mui/material/TextField'
       display: 'block',
       color: '#bd93f9',
     },
-})
+  })
 
 export default function AddSong() {
 
@@ -39,11 +38,10 @@ export default function AddSong() {
   const [redirect, setRedirect] = useState(false)
   const classes = useStyles()
 
-  // const newSongUri = 'http://localhost:8000/songs'
   const api = 'http://localhost:3800/api/songs'
 
   const handleSubmit = async e => {
-    let response;
+    // let response;
     e.preventDefault()
     let song = {
       title: title,
@@ -52,13 +50,12 @@ export default function AddSong() {
       genre: genre,
       releaseDate: releaseDate
     }
-      try {
-        response = await axios.post(api, song)
-        .then(() => setRedirect(true))
-      } catch (error) {
-        console.log(error)
-      }
-      console.log(response)
+    try {
+      await axios.post(api, song)
+      .then(() => setRedirect(true))
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   if (redirect) {
@@ -71,8 +68,6 @@ export default function AddSong() {
       <Typography 
           className={classes.text}
           variant='h6'
-          // color='textPrimary'
-          // color='textSecondary'
           component='h2'
           gutterBottom
         >
@@ -145,6 +140,5 @@ export default function AddSong() {
           </Button>
         </form>
     </Container>
-
   )
 }

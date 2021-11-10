@@ -24,7 +24,6 @@ export default function MusicTable() {
   const [searchTerm, setSearchTerm] = useState('')
   const [songList, setSongList] = useState([])
   const classes = useStyles()
-  // const dbUri = 'http://localhost:8000/songs'
   const api = 'http://localhost:3800/api/songs'
 
   useEffect(() => {
@@ -33,7 +32,6 @@ export default function MusicTable() {
 
   const getSongs = async () => {
     try {
-      // await axios.get(`${dbUri}`).then(
       await axios.get(api).then(
         response => {
           setSongList(response.data)
@@ -43,8 +41,7 @@ export default function MusicTable() {
 
   const handleDelete = async (id) => {
     try {
-      // await axios.delete(`http://localhost:8000/songs/${id}`)
-      await axios.delete(`api${id}`)
+      await axios.delete(`http://localhost:3800/api/songs/${id}`)
       getSongs()
     } catch (error) {
       console.log(error)
@@ -53,23 +50,23 @@ export default function MusicTable() {
     setSongList(newSongs)
   }
 
-  const handleUpdate = async (id) => {
-    
-  }
+  // const handleUpdate = async (id) => {
+
+  // }
 
   return (
-      <Container>
-          <Container className={classes.field}>
-          <TextField 
-            InputLabelProps={{style: {color: '#fff'}}}
-            label='Filter songs...'
-            className={classes.text}
-            variant='outlined'
-              onChange={e => {
-                setSearchTerm(e.target.value)
-              }}
-            />
-        </Container>
+    <Container>
+        <Container className={classes.field}>
+        <TextField 
+          InputLabelProps={{style: {color: '#fff'}}}
+          label='Filter songs...'
+          className={classes.text}
+          variant='outlined'
+            onChange={e => {
+              setSearchTerm(e.target.value)
+            }}
+          />
+      </Container>
         <Grid container spacing={3}>
           {songList
            // eslint-disable-next-line array-callback-return
@@ -91,10 +88,7 @@ export default function MusicTable() {
             </Grid>
           ))}
         </Grid>
-      </Container>
+    </Container>
   )
 }
 
-  // inputfield: {
-  //   background: "#44475a"
-  // }

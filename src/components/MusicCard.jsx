@@ -20,7 +20,7 @@ export default function MusicCard({ song, handleDelete }) {
           action={
             <ButtonGroup variant='contained'>
               {/* onCLick={() => handleUpdate(params)} */}
-              <IconButton>
+              <IconButton >
                 <UpdateIcon style={{color: '#89ddff'}}/>
               </IconButton>
               <IconButton onClick={() => handleDelete(song.id)}>
