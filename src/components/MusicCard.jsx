@@ -5,9 +5,9 @@ import CardContent from '@material-ui/core/CardContent'
 import { Avatar, ButtonGroup, IconButton, Typography } from '@material-ui/core'
 import { DeleteOutline } from '@material-ui/icons'
 import UpdateIcon from '@material-ui/icons/Update';
-import { Link } from 'react-router-dom'
-import { Routes, Route } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
+import { Routes, Route, useNavigate } from 'react-router-dom'
+import MusicVideoIcon from '@material-ui/icons/MusicVideoOutlined';
 
 import EditSong from '../pages/EditSong'
 
@@ -26,34 +26,27 @@ export default function MusicCard({ song, handleDelete }) {
           action={
 
             <ButtonGroup variant='contained'>
-              {/* <IconButton component={Link} to='/music/edit/' >
+          
+          {/* i need to figure out how to pass the song id into here */}
+          {/* it logs the correct id but wont pass the value into the component */}
+              <IconButton onClick={() => navigate('/music/edit/')} onClickCapture={() => console.log(song.id)}>
                 <UpdateIcon style={{color: '#89ddff'}}/>
-              </IconButton> */}
-
-
-              {/* <IconButton component={Link} to='/music/edit/'
-                onClick={() => handleUpdate(song.id)}>
-                <UpdateIcon style={{color: '#89ddff'}}/>
-              </IconButton> */}
-
-               {/* <IconButton component={Link} to='/music/edit/'>
-                <UpdateIcon style={{color: '#89ddff'}}/>
-              </IconButton> */}
-
-              <IconButton onClick={() => navigate('/music/edit/')}>
-                <UpdateIcon style={{color: '#89ddff'}}/>
+                  <Routes>
+                    <Route element={<EditSong songid={song.id} />} />
+                  </Routes>
               </IconButton>
+          {/* plz plz plzplz plz plzplz */}
+          {/* plz plz plzplz plz plzplz */}
 
               <IconButton onClick={() => handleDelete(song.id)}>
                 <DeleteOutline style={{color: '#f07178'}}/>
               </IconButton>
 
+                  {/* this just logs the song id */}
               <IconButton onClick={() => console.log(song.id)}>
-                <DeleteOutline style={{color: '#f07178'}}/>
+                <MusicVideoIcon style={{color: '#f5f5f5'}}/>
               </IconButton>
-              {/* <Routes>
-                <Route element={<EditSong songid={song.id} />} />
-              </Routes> */}
+              
             </ButtonGroup>
 
           } 

@@ -30,7 +30,7 @@ import UpdateIcon from '@material-ui/icons/Update';
     },
   })
 
-export default function EditSong({ song, songid }) {
+export default function EditSong({ songid }) {
 
   const [title, setTitle] = useState('')
   const [album, setAlbum] = useState('')
@@ -41,7 +41,7 @@ export default function EditSong({ song, songid }) {
   const classes = useStyles()
   const navigate = useNavigate()
 
-  const api = 'http://localhost:3800/api/songs/'
+  const api = `http://localhost:3800/api/songs/${songid}`
 
   // http://localhost:3800/api/songs/{id}
   // {
@@ -52,12 +52,21 @@ export default function EditSong({ song, songid }) {
   //   "releaseDate": "tomorrow"
   // }
 
+// TODO
+// i think i need to import get songs
+// or a song list in here to pass the id into the api link
+// since i cant pass the songid in as props
+
+// TODO
+// also learn how to use context. i think it might help in this application
+
+// TODO
+// ! test with hardcoded songid first!
 
 
   useEffect(() => {
-    console.log(song)
     console.log(songid)
-  })
+  }, [songid])
 
 
   const handleUpdate = async (e) => {
