@@ -20,8 +20,8 @@ export default function MusicCard({ song, handleDelete, handleUpdate }) {
           }
           action={
             <ButtonGroup variant='contained'>
-              {/* onCLick={() => handleUpdate(song.id)} */}
-              <IconButton component={Link} to='/song/edit'>
+              {/* onClick={() => handleUpdate(song.id)} */}
+              <IconButton component={Link} to='/music/edit/' >
                 <UpdateIcon style={{color: '#89ddff'}}/>
               </IconButton>
               <IconButton onClick={() => handleDelete(song.id)}>
@@ -39,6 +39,7 @@ export default function MusicCard({ song, handleDelete, handleUpdate }) {
           </Typography>
         </CardContent>
       </Card>
+      
     </div>
   )
 }
