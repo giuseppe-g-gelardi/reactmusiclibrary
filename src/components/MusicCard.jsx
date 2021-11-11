@@ -5,8 +5,9 @@ import CardContent from '@material-ui/core/CardContent'
 import { Avatar, ButtonGroup, IconButton, Typography } from '@material-ui/core'
 import { DeleteOutline } from '@material-ui/icons'
 import UpdateIcon from '@material-ui/icons/Update';
+import { Link } from 'react-router-dom'
 
-export default function MusicCard({ song, handleDelete }) {
+export default function MusicCard({ song, handleDelete, handleUpdate }) {
 
   return (
     <div>
@@ -19,8 +20,8 @@ export default function MusicCard({ song, handleDelete }) {
           }
           action={
             <ButtonGroup variant='contained'>
-              {/* onCLick={() => handleUpdate(params)} */}
-              <IconButton >
+              {/* onCLick={() => handleUpdate(song.id)} */}
+              <IconButton component={Link} to='/song/edit'>
                 <UpdateIcon style={{color: '#89ddff'}}/>
               </IconButton>
               <IconButton onClick={() => handleDelete(song.id)}>

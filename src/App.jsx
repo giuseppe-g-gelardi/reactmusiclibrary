@@ -22,7 +22,7 @@ export default function App() {
             <Route exact path='/music'>
               <MusicTable />
             </Route>
-            <Route exact path='/music/:id'>
+            <Route exact path='/music/edit'>
               <EditSong />
             </Route>
           </Switch>

@@ -50,9 +50,16 @@ export default function MusicTable() {
     setSongList(newSongs)
   }
 
-  // const handleUpdate = async (id) => {
-
-  // }
+  const handleUpdate = async (id) => {
+    try {
+      await axios.put(`http://localhost:3800/api/songs/${id}`)
+      getSongs()
+    } catch (error) {
+      console.log(error)
+    }
+    const newSongs = songList.filter(song => song.id !== id)
+    setSongList(newSongs)
+  }
 
   return (
     <Container>
@@ -84,7 +91,7 @@ export default function MusicTable() {
               return val
             }}).map((song, i) => (
             <Grid item key={song.id} sx={12} md={6} lg={4}> 
-              <MusicCard song={song} handleDelete={handleDelete} />
+              <MusicCard song={song} handleDelete={handleDelete} handleUpdate={handleUpdate} />
             </Grid>
           ))}
         </Grid>

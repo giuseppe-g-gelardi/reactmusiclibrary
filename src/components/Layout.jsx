@@ -97,7 +97,6 @@ export default function Layout({ children }) {
           Music
         </Typography>
       </div>
-        {/* list / links */}
         <List>
           {menuItems.map(item => (
             <ListItem
