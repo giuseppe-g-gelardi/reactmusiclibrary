@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom'
 
 export default function MusicCard({ song, handleDelete, handleUpdate }) {
 
+
   return (
     <div>
       <Card elevation={3}>
@@ -19,8 +20,8 @@ export default function MusicCard({ song, handleDelete, handleUpdate }) {
             </Avatar>
           }
           action={
+
             <ButtonGroup variant='contained'>
-              {/* onClick={() => handleUpdate(song.id)} */}
               <IconButton component={Link} to='/music/edit/' >
                 <UpdateIcon style={{color: '#89ddff'}}/>
               </IconButton>
@@ -28,6 +29,7 @@ export default function MusicCard({ song, handleDelete, handleUpdate }) {
                 <DeleteOutline style={{color: '#f07178'}}/>
               </IconButton>
             </ButtonGroup>
+
           } 
           title={song.title}
           subheader={song.artist}     
@@ -39,7 +41,9 @@ export default function MusicCard({ song, handleDelete, handleUpdate }) {
           </Typography>
         </CardContent>
       </Card>
-      
+
     </div>
   )
 }
+              // {/* onClick={() => handleUpdate(song.id)} */}
+              // navigate('/music/edit')

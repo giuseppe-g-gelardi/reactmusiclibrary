@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom/'
+import { Routes, Route } from 'react-router-dom/'
 import { ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline';
 import MusicTable from './pages/MusicTable'
@@ -13,21 +13,13 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
         <Layout>
-          <Switch>
-            <Route exact path='/'>
-              <AddSong />
-            </Route>
-            <Route exact path='/music'>
-              <MusicTable />
-            </Route>
-            <Route exact path='/music/edit'>
-              <EditSong />
-            </Route>
-          </Switch>
+          <Routes>
+            <Route path='/' element={<AddSong />} />
+            <Route path='/music' element={<MusicTable />} />
+            <Route path='/music/edit' element={<EditSong />} />
+          </Routes>
         </Layout>
-      </Router>
     </ThemeProvider>
   )
 }

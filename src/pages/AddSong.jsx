@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Redirect } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
@@ -37,6 +37,7 @@ export default function AddSong() {
   const [releaseDate, setReleaseDate] = useState('')
   const [redirect, setRedirect] = useState(false)
   const classes = useStyles()
+  const navigate = useNavigate()
 
   const api = 'http://localhost:3800/api/songs'
 
@@ -59,7 +60,8 @@ export default function AddSong() {
   }
 
   if (redirect) {
-    return <Redirect to='/music' />
+    // return <Redirect to='/music' />
+    navigate('/music')
   }
   
   return (

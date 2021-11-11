@@ -7,7 +7,7 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import { AddCircleOutlineOutlined, SubjectOutlined } from '@material-ui/icons'
-import { useHistory, useLocation } from 'react-router-dom'
+import { useHistory, useLocation, useNavigate } from 'react-router-dom'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import { format } from 'date-fns'
@@ -53,8 +53,9 @@ const useStyles = makeStyles((theme) => {
 
 export default function Layout({ children }) {
   const classes = useStyles()
-  const history = useHistory()
+  // const history = useHistory()
   const location = useLocation()
+  const navigate = useNavigate()
 
   const menuItems = [
     {
@@ -102,7 +103,8 @@ export default function Layout({ children }) {
             <ListItem
               button
               key={item.text}
-              onClick={() => history.push(item.path)}
+              // onClick={() => history.push(item.path)}
+              onClick={() => navigate(item.path)}
               className={location.pathname === item.path ? classes.active : null} 
             >
               <ListItemIcon>{item.icon}</ListItemIcon>
