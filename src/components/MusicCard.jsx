@@ -6,14 +6,21 @@ import { Avatar, ButtonGroup, IconButton, Typography } from '@material-ui/core'
 import { DeleteOutline } from '@material-ui/icons'
 import UpdateIcon from '@material-ui/icons/Update';
 // import { Link } from 'react-router-dom'
-// import { Routes, Route, useNavigate, Link } from 'react-router-dom'
+import { Routes, Route, useNavigate, Link } from 'react-router-dom'
 // import MusicVideoIcon from '@material-ui/icons/MusicVideoOutlined';
 
-// import EditSong from '../pages/EditSong'
+import EditSong from '../pages/EditSong'
 
 export default function MusicCard(props) {
-  // const navigate = useNavigate()
+
+  
+
+  const navigate = useNavigate()
   const { song, handleDelete } = props
+
+  const handleClick = () => {
+
+  }
 
   return (
     <div>
@@ -28,18 +35,14 @@ export default function MusicCard(props) {
 
             <ButtonGroup variant='contained'>
 
-              {/* <IconButton onClick={() => navigate('/music/edit/')} onClickCapture={() => console.log(song.id)}> */}
-              <IconButton onClick={() => console.log(song.id)}>
+              <IconButton onClick={() => navigate('/music/edit/')} onClickCapture={() => console.log(song.id)}>
+              {/* <IconButton onClick={() => console.log(song.id)}> */}
                 <UpdateIcon style={{color: '#89ddff'}}/>
               </IconButton>
 
               <IconButton onClick={() => handleDelete(song.id)}>
                 <DeleteOutline style={{color: '#f07178'}}/>
               </IconButton>
-
-              {/* <IconButton onClick={() => console.log(song.id)}>
-                <MusicVideoIcon style={{color: '#f5f5f5'}}/>
-              </IconButton> */}
               
             </ButtonGroup>
 
