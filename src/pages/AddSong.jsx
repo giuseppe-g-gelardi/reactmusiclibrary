@@ -60,7 +60,6 @@ export default function AddSong() {
   }
 
   if (redirect) {
-    // return <Redirect to='/music' />
     navigate('/music')
   }
   

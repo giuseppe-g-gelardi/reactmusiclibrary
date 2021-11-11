@@ -5,8 +5,8 @@ import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import { Container } from '@material-ui/core'
 import MusicCard from '../components/MusicCard'
-// import EditSong from './EditSong'
-// import { Routes, Route } from 'react-router-dom'
+import EditSong from './EditSong'
+import { Routes, Route } from 'react-router-dom'
 
 const useStyles = makeStyles({
   field: {
@@ -37,6 +37,7 @@ export default function MusicTable() {
       await axios.get(api).then(
         response => {
           setSongList(response.data)
+        
         }, err => {console.log(err)})
     } catch (e) {console.log(e)}
   }
@@ -51,6 +52,8 @@ export default function MusicTable() {
     const newSongs = songList.filter(song => song.id !== id)
     setSongList(newSongs)
   }
+
+
 
   return (
     <Container>
@@ -80,12 +83,12 @@ export default function MusicTable() {
                 .toLowerCase()
                 .includes(searchTerm.toLowerCase())) {
               return val
-            }}).map((song, i) => (
+            }}).map((song, i) => ( 
             <Grid item key={song.id} sx={12} md={6} lg={4}> 
               <MusicCard song={song} handleDelete={handleDelete} />
-              {/* <Routes>
+              <Routes song={song} >
                 <Route element={<EditSong song={song} />} />
-              </Routes> */}
+              </Routes>
             </Grid>
             
           ))}

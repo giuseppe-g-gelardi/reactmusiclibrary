@@ -6,13 +6,14 @@ import { Avatar, ButtonGroup, IconButton, Typography } from '@material-ui/core'
 import { DeleteOutline } from '@material-ui/icons'
 import UpdateIcon from '@material-ui/icons/Update';
 // import { Link } from 'react-router-dom'
-import { Routes, Route, useNavigate } from 'react-router-dom'
-import MusicVideoIcon from '@material-ui/icons/MusicVideoOutlined';
+// import { Routes, Route, useNavigate, Link } from 'react-router-dom'
+// import MusicVideoIcon from '@material-ui/icons/MusicVideoOutlined';
 
-import EditSong from '../pages/EditSong'
+// import EditSong from '../pages/EditSong'
 
-export default function MusicCard({ song, handleDelete }) {
-  const navigate = useNavigate()
+export default function MusicCard(props) {
+  // const navigate = useNavigate()
+  const { song, handleDelete } = props
 
   return (
     <div>
@@ -26,26 +27,19 @@ export default function MusicCard({ song, handleDelete }) {
           action={
 
             <ButtonGroup variant='contained'>
-          
-          {/* i need to figure out how to pass the song id into here */}
-          {/* it logs the correct id but wont pass the value into the component */}
-              <IconButton onClick={() => navigate('/music/edit/')} onClickCapture={() => console.log(song.id)}>
+
+              {/* <IconButton onClick={() => navigate('/music/edit/')} onClickCapture={() => console.log(song.id)}> */}
+              <IconButton onClick={() => console.log(song.id)}>
                 <UpdateIcon style={{color: '#89ddff'}}/>
-                  <Routes>
-                    <Route element={<EditSong songid={song.id} />} />
-                  </Routes>
               </IconButton>
-          {/* plz plz plzplz plz plzplz */}
-          {/* plz plz plzplz plz plzplz */}
 
               <IconButton onClick={() => handleDelete(song.id)}>
                 <DeleteOutline style={{color: '#f07178'}}/>
               </IconButton>
 
-                  {/* this just logs the song id */}
-              <IconButton onClick={() => console.log(song.id)}>
+              {/* <IconButton onClick={() => console.log(song.id)}>
                 <MusicVideoIcon style={{color: '#f5f5f5'}}/>
-              </IconButton>
+              </IconButton> */}
               
             </ButtonGroup>
 
