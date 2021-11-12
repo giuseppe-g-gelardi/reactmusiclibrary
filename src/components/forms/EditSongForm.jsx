@@ -33,8 +33,6 @@ export default function EditSong(props) {
 
   const { song } = props
 
-
-
   const [title, setTitle] = useState('')
   const [album, setAlbum] = useState('')
   const [artist, setArtist] = useState('')
@@ -42,7 +40,10 @@ export default function EditSong(props) {
   const [releaseDate, setReleaseDate] = useState('')
   const classes = useStyles()
 
-  const api = (`http://localhost:3800/api/songs/${song.id}`)
+  const songid = song.id
+  const id = songid.toString()
+
+  // const api = (`http://localhost:3800/api/songs/${id}`)
   // const api = ("http://localhost:3800/api/songs/" + song.id)
   // http://localhost:3800/api/songs/{id}
 
@@ -57,23 +58,59 @@ export default function EditSong(props) {
 
 
 
-  const handleUpdate = async (e) => {
-    e.preventDevault()
+  // const handleUpdate = async (e) => {
+  //   e.preventDevault()
+  //   // let response;
+  //   let song = {
+  //     title: title,
+  //     album: album,
+  //     artist: artist,
+  //     genre: genre,
+  //     releaseDate: releaseDate
+  //   }
+  //   try {
+  //     await axios.put(api, song)
+  //     .then(() => reloadPage())
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
+
+
+  const handleUpdate = async () => {
+    // e.preventDevault()
     // let response;
     let song = {
-      title: title,
-      album: album,
-      artist: artist,
-      genre: genre,
-      releaseDate: releaseDate
+      "title": title,
+      "album": album,
+      "artist": artist,
+      "genre": genre,
+      "releaseDate": releaseDate
     }
     try {
-      await axios.put(api, song)
-      .then(() => reloadPage())
+      await axios.put(`http://localhost:3800/api/songs/${id}`, song)
+      .then((song) => {
+        console.log(song)
+      })
     } catch (error) {
       console.log(error)
     }
   }
+
+  // const handleUpdate = async (id) => {     
+  //   try {
+  //     await axios.put(`http://localhost:3800/api/songs/${id}`, {
+  //       title: title,
+  //       album: album,
+  //       artist: artist,
+  //       genre: genre,
+  //       releaseDate: releaseDate
+  //     })
+  //     .then(() => reloadPage())
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
 
    // function to reload the page
    const reloadPage = () => {
@@ -91,7 +128,7 @@ export default function EditSong(props) {
         >
           Edit song...<UpdateIcon />
         </Typography> */}
-        <button onClick={() => console.log(song, song.id)}>log</button>
+        <button onClick={() => console.log(song, id)}>log</button>
 
         <form noValidate autoComplete='off' onSubmit={handleUpdate}>
           <TextField
