@@ -53,7 +53,6 @@ const useStyles = makeStyles((theme) => {
 
 export default function Layout({ children }) {
   const classes = useStyles()
-  // const history = useHistory()
   const location = useLocation()
   const navigate = useNavigate()
 
@@ -103,7 +102,6 @@ export default function Layout({ children }) {
             <ListItem
               button
               key={item.text}
-              // onClick={() => history.push(item.path)}
               onClick={() => navigate(item.path)}
               className={location.pathname === item.path ? classes.active : null} 
             >

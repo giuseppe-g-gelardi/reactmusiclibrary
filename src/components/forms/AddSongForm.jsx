@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-// import { useNavigate } from 'react-router-dom'
-// import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
@@ -40,7 +38,6 @@ export default function AddSongForm() {
   const api = 'http://localhost:3800/api/songs'
 
   const handleSubmit = async e => {
-    // let response;
     e.preventDefault()
     let song = {
       title: title,
@@ -57,26 +54,12 @@ export default function AddSongForm() {
       console.log(error)
     }
   }
-
-    // function to reload the page
     const reloadPage = () => {
       window.location.reload()
     }
-
-  
   
   return (
-
     <Container>
-      {/* <Typography 
-          className={classes.text}
-          variant='h6'
-          component='h2'
-          gutterBottom
-        >
-          Add a new song!
-        </Typography> */}
-
         <form noValidate autoComplete='off' onSubmit={handleSubmit}>
           <TextField
             InputLabelProps={{style: {color: '#fff'}}}
@@ -139,7 +122,7 @@ export default function AddSongForm() {
             variant='contained'
             endIcon={<KeyboardArrowRightIcon />}
           >
-            Submit
+            Submit song!
           </Button>
         </form>
     </Container>

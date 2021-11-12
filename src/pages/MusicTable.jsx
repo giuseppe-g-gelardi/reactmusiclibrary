@@ -14,7 +14,6 @@ const useStyles = makeStyles({
   field: {
     marginTop: 20,
     marginBottom: 20,
-    // display: 'flex',
   },
   text: {
     marginTop: 20,
@@ -31,9 +30,6 @@ export default function MusicTable() {
 
   const [openPopup, setOpenPopup] = useState(false)
 
-
-
-
   const api = 'http://localhost:3800/api/songs'
 
   useEffect(() => {
@@ -49,9 +45,6 @@ export default function MusicTable() {
     } catch (e) {console.log(e)}
   }
 
-
-
-
   const handleDelete = async (id) => {
     try {
       await axios.delete(`http://localhost:3800/api/songs/${id}`)
@@ -62,10 +55,6 @@ export default function MusicTable() {
     const newSongs = songList.filter(song => song.id !== id)
     setSongList(newSongs)
   }
-
- 
-
-
 
   return (
     <Container>
@@ -82,15 +71,12 @@ export default function MusicTable() {
           />
 
         <Button
-            // type='submit'
             color='secondary'
             variant='contained'
-            // onClick={() => handleFormDialog()}
             endIcon={<AddCircleOutlineOutlined />}
             onClick={() => setOpenPopup(true)}
           >
             Add Song
-          
         </Button>
       </Container>
       
@@ -118,9 +104,7 @@ export default function MusicTable() {
               <MusicCard song={song} handleDelete={handleDelete} />
             </Grid>
           ))}
-            
         </Grid>
-
         <Popup
           title="Add a new song!"
           openPopup={openPopup}

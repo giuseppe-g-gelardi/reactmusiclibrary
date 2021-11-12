@@ -3,9 +3,6 @@ import { Dialog, DialogTitle, DialogContent, makeStyles, Typography } from '@mat
 import Controls from './controls/Controls'
 import { Close } from '@material-ui/icons';
 
-
-// ! might delete later // this pushes the dialog to the top of the screen
-// TODO edit styles to match theme better
 const useStyles = makeStyles(theme => ({
   dialogWrapper: {
     padding: theme.spacing(2),

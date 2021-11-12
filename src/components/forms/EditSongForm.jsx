@@ -1,13 +1,10 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-// import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
-import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
 import { makeStyles } from '@material-ui/core/styles'
 import TextField from '@mui/material/TextField'
-// import UpdateIcon from '@material-ui/icons/Update';
-
+import UpdateIcon from '@material-ui/icons/Update';
 
   const useStyles = makeStyles({
     field: {
@@ -39,47 +36,10 @@ export default function EditSong(props) {
   const [genre, setGenre] = useState('')
   const [releaseDate, setReleaseDate] = useState('')
   const classes = useStyles()
-
   const songid = song.id
   const id = songid.toString()
 
-  // const api = (`http://localhost:3800/api/songs/${id}`)
-  // const api = ("http://localhost:3800/api/songs/" + song.id)
-  // http://localhost:3800/api/songs/{id}
-
-  // {
-  //   "title": "asdf",
-  //   "album": "asdf",
-  //   "artist": "asdf",
-  //   "genre": "asdf",
-  //   "releaseDate": "tomorrow"
-  // }
-
-
-
-
-  // const handleUpdate = async (e) => {
-  //   e.preventDevault()
-  //   // let response;
-  //   let song = {
-  //     title: title,
-  //     album: album,
-  //     artist: artist,
-  //     genre: genre,
-  //     releaseDate: releaseDate
-  //   }
-  //   try {
-  //     await axios.put(api, song)
-  //     .then(() => reloadPage())
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
-
-
   const handleUpdate = async () => {
-    // e.preventDevault()
-    // let response;
     let song = {
       "title": title,
       "album": album,
@@ -96,40 +56,10 @@ export default function EditSong(props) {
       console.log(error)
     }
   }
-
-  // const handleUpdate = async (id) => {     
-  //   try {
-  //     await axios.put(`http://localhost:3800/api/songs/${id}`, {
-  //       title: title,
-  //       album: album,
-  //       artist: artist,
-  //       genre: genre,
-  //       releaseDate: releaseDate
-  //     })
-  //     .then(() => reloadPage())
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
-  // }
-
-   // function to reload the page
-   const reloadPage = () => {
-    window.location.reload()
-  }
   
   return (
 
     <Container>
-      {/* <Typography 
-          className={classes.text}
-          variant='h6'
-          component='h2'
-          gutterBottom
-        >
-          Edit song...<UpdateIcon />
-        </Typography> */}
-        <button onClick={() => console.log(song, id)}>log</button>
-
         <form noValidate autoComplete='off' onSubmit={handleUpdate}>
           <TextField
             InputLabelProps={{style: {color: '#fff'}}}
@@ -191,9 +121,9 @@ export default function EditSong(props) {
             type='submit'
             color='secondary'
             variant='contained'
-            endIcon={<KeyboardArrowRightIcon />}
+            endIcon={<UpdateIcon />}
           >
-            Submit
+            Update Song
           </Button>
         </form>
     </Container>
