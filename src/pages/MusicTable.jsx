@@ -5,10 +5,9 @@ import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import { Container } from '@material-ui/core'
 import MusicCard from '../components/MusicCard'
-import EditSong from './EditSong'
-import { Routes, Route } from 'react-router-dom'
 import { AddCircleOutlineOutlined } from '@material-ui/icons'
 import Button from '@material-ui/core/Button'
+import Popup from '../components/Popup'
 
 
 const useStyles = makeStyles({
@@ -29,6 +28,12 @@ export default function MusicTable() {
   const [searchTerm, setSearchTerm] = useState('')
   const [songList, setSongList] = useState([])
   const classes = useStyles()
+
+  const [openPopup, setOpenPopup] = useState(false)
+
+
+
+
   const api = 'http://localhost:3800/api/songs'
 
   useEffect(() => {
@@ -55,6 +60,8 @@ export default function MusicTable() {
     setSongList(newSongs)
   }
 
+ 
+
 
 
   return (
@@ -78,7 +85,9 @@ export default function MusicTable() {
             // type='submit'
             color='secondary'
             variant='contained'
+            // onClick={() => handleFormDialog()}
             endIcon={<AddCircleOutlineOutlined />}
+            onClick={() => setOpenPopup(true)}
           >
             Add Song
           
@@ -107,15 +116,17 @@ export default function MusicTable() {
               
             <Grid item key={song.id} sx={12} md={6} lg={4}> 
               <MusicCard song={song} handleDelete={handleDelete} />
-              <Routes>
-                {/* <Route path={`/music/edit/${song.id}`} element={<EditSong song={song} />} /> */}
-                <Route path='/music/edit/' element={<EditSong song={song} />} />
-              </Routes>
             </Grid>
-            
           ))}
             
         </Grid>
+
+        <Popup
+        openPopup={openPopup}
+        setOpenPopup={setOpenPopup}
+        >
+
+        </Popup>
     </Container>
   )
 }

@@ -29,9 +29,7 @@ export default function MusicCard(props) {
 
             <ButtonGroup variant='contained'>
 
-              <IconButton onClick={() => navigate('/music/edit/')} onClickCapture={() => console.log(song.id)}>
-              {/* <IconButton onClick={() => navigate(`/music/edit/${song.id}`)} onClickCapture={() => console.log(song.id)}> */}
-              {/* <IconButton onClick={() => console.log(song.id)}> */}
+              <IconButton>
                 <UpdateIcon style={{color: '#89ddff'}}/>
               </IconButton>
 
@@ -57,3 +55,4 @@ export default function MusicCard(props) {
   )
 }
              
+{/* <IconButton onClick={() => navigate('/music/edit/')} onClickCapture={() => console.log(song.id)}> */}
