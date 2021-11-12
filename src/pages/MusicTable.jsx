@@ -5,8 +5,11 @@ import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import { Container } from '@material-ui/core'
 import MusicCard from '../components/MusicCard'
-// import EditSong from './EditSong'
-// import { Routes, Route } from 'react-router-dom'
+import EditSong from './EditSong'
+import { Routes, Route } from 'react-router-dom'
+import { AddCircleOutlineOutlined } from '@material-ui/icons'
+import Button from '@material-ui/core/Button'
+
 
 const useStyles = makeStyles({
   field: {
@@ -67,6 +70,24 @@ export default function MusicTable() {
             }}
           />
       </Container>
+      <Container className={classes.field}>
+
+
+        {/* TODO put to the right of filter textfield */}
+        <Button
+            // type='submit'
+            color='secondary'
+            variant='contained'
+            endIcon={<AddCircleOutlineOutlined />}
+          >
+            Add Song
+          
+        </Button>
+
+        
+
+
+      </Container>
         <Grid container spacing={3}>
           {songList
            // eslint-disable-next-line array-callback-return
@@ -86,6 +107,10 @@ export default function MusicTable() {
               
             <Grid item key={song.id} sx={12} md={6} lg={4}> 
               <MusicCard song={song} handleDelete={handleDelete} />
+              <Routes>
+                {/* <Route path={`/music/edit/${song.id}`} element={<EditSong song={song} />} /> */}
+                <Route path='/music/edit/' element={<EditSong song={song} />} />
+              </Routes>
             </Grid>
             
           ))}

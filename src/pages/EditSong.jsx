@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import Typography from '@material-ui/core/Typography'
@@ -33,6 +33,7 @@ import UpdateIcon from '@material-ui/icons/Update';
 export default function EditSong({ song }) {
 
 
+
   const [title, setTitle] = useState('')
   const [album, setAlbum] = useState('')
   const [artist, setArtist] = useState('')
@@ -44,6 +45,9 @@ export default function EditSong({ song }) {
 
   const api = ("http://localhost:3800/api/songs/" + song)
   // http://localhost:3800/api/songs/{id}
+
+
+
   // {
   //   "title": "asdf",
   //   "album": "asdf",
@@ -92,7 +96,6 @@ export default function EditSong({ song }) {
   return (
 
     <Container>
-      <button onClick={() => console.log(song)}>fml</button>
       <Typography 
           className={classes.text}
           variant='h6'

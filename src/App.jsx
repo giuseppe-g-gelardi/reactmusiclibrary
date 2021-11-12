@@ -12,14 +12,14 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <CssBaseline />
-        <Layout>
-          <Routes>
-            <Route path='/' element={<AddSong />} />
-            <Route path='/music/*' element={<MusicTable />} />
-            <Route path='/music/edit' element={<EditSong />} />
-          </Routes>
-        </Layout>
+        <CssBaseline />
+          <Layout>
+            <Routes>
+              <Route path='/' element={<AddSong />} />
+              <Route path='/music/*' element={<MusicTable />} />
+              <Route path='/music/edit/' element={<EditSong />} />
+            </Routes>
+          </Layout>
     </ThemeProvider>
   )
 }

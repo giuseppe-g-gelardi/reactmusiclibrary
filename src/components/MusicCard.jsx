@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import Card from '@material-ui/core/Card'
 import CardHeader from '@material-ui/core/CardHeader'
 import CardContent from '@material-ui/core/CardContent'
@@ -13,14 +13,8 @@ import EditSong from '../pages/EditSong'
 
 export default function MusicCard(props) {
 
-  
-
   const navigate = useNavigate()
   const { song, handleDelete } = props
-
-  const handleClick = () => {
-
-  }
 
   return (
     <div>
@@ -36,6 +30,7 @@ export default function MusicCard(props) {
             <ButtonGroup variant='contained'>
 
               <IconButton onClick={() => navigate('/music/edit/')} onClickCapture={() => console.log(song.id)}>
+              {/* <IconButton onClick={() => navigate(`/music/edit/${song.id}`)} onClickCapture={() => console.log(song.id)}> */}
               {/* <IconButton onClick={() => console.log(song.id)}> */}
                 <UpdateIcon style={{color: '#89ddff'}}/>
               </IconButton>
