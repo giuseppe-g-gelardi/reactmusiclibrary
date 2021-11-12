@@ -8,7 +8,7 @@ import MusicCard from '../components/MusicCard'
 import { AddCircleOutlineOutlined } from '@material-ui/icons'
 import Button from '@material-ui/core/Button'
 import Popup from '../components/Popup'
-
+import AddSongForm from '../components/forms/AddSongForm'
 
 const useStyles = makeStyles({
   field: {
@@ -48,6 +48,9 @@ export default function MusicTable() {
         }, err => {console.log(err)})
     } catch (e) {console.log(e)}
   }
+
+
+
 
   const handleDelete = async (id) => {
     try {
@@ -122,10 +125,11 @@ export default function MusicTable() {
         </Grid>
 
         <Popup
-        openPopup={openPopup}
-        setOpenPopup={setOpenPopup}
+          title="Add a new song!"
+          openPopup={openPopup}
+          setOpenPopup={setOpenPopup}
         >
-
+          <AddSongForm />
         </Popup>
     </Container>
   )
