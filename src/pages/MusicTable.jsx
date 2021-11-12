@@ -14,7 +14,7 @@ const useStyles = makeStyles({
   field: {
     marginTop: 20,
     marginBottom: 20,
-    display: 'block',
+    // display: 'flex',
   },
   text: {
     marginTop: 20,
@@ -69,8 +69,9 @@ export default function MusicTable() {
 
   return (
     <Container>
-        <Container className={classes.field}>
+        <Container className={classes.field} style={{display: 'flex'}}>
         <TextField 
+        style={{flexGrow: 1}}
           InputLabelProps={{style: {color: '#fff'}}}
           label='Filter songs...'
           className={classes.text}
@@ -79,11 +80,7 @@ export default function MusicTable() {
               setSearchTerm(e.target.value)
             }}
           />
-      </Container>
-      <Container className={classes.field}>
 
-
-        {/* TODO put to the right of filter textfield */}
         <Button
             // type='submit'
             color='secondary'
@@ -95,9 +92,9 @@ export default function MusicTable() {
             Add Song
           
         </Button>
-
-        
-
+      </Container>
+      
+      <Container className={classes.field}>
 
       </Container>
         <Grid container spacing={3}>

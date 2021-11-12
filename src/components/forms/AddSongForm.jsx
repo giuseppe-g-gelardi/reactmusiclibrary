@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 // import { useNavigate } from 'react-router-dom'
-import Typography from '@material-ui/core/Typography'
+// import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import Container from '@material-ui/core/Container'
 import KeyboardArrowRightIcon from '@material-ui/icons/KeyboardArrowRight'
@@ -35,9 +35,7 @@ export default function AddSongForm() {
   const [artist, setArtist] = useState('')
   const [genre, setGenre] = useState('')
   const [releaseDate, setReleaseDate] = useState('')
-  // const [redirect, setRedirect] = useState(false)
   const classes = useStyles()
-  // const navigate = useNavigate()
 
   const api = 'http://localhost:3800/api/songs'
 
@@ -65,9 +63,7 @@ export default function AddSongForm() {
       window.location.reload()
     }
 
-  // if (redirect) {
-  //   navigate('/music')
-  // }
+  
   
   return (
 
