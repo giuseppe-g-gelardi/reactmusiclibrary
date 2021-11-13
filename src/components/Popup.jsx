@@ -23,23 +23,23 @@ export default function Popup(props) {
   const classes = useStyles()
 
   return (
-      <Dialog open={openPopup} maxWidth='md' classes={{ paper: classes.dialogWrapper }}>
-        <DialogTitle className={classes.DialogTitle}>
-          <div style={{display: 'flex'}}>
-            <Typography variant='h6' component='div' className={classes.text} style={{flexGrow: 1}}>
-              {title}
-            </Typography>
-            <Controls.ActionButton
-              color='secondary'
-              onClick={() => {setOpenPopup(false)}}
-            >
-              <Close />
-            </Controls.ActionButton>
-          </div>
-        </DialogTitle>
-        <DialogContent dividers>
-          {children}
-        </DialogContent>
-      </Dialog>
+    <Dialog open={openPopup} maxWidth='md' classes={{ paper: classes.dialogWrapper }}>
+      <DialogTitle className={classes.DialogTitle}>
+        <div style={{display: 'flex'}}>
+          <Typography variant='h6' component='div' className={classes.text} style={{flexGrow: 1}}>
+            {title}
+          </Typography>
+          <Controls.ActionButton
+            color='secondary'
+            onClick={() => {setOpenPopup(false)}}
+          >
+            <Close />
+          </Controls.ActionButton>
+        </div>
+      </DialogTitle>
+      <DialogContent dividers>
+        {children}
+      </DialogContent>
+    </Dialog>
   )
 }

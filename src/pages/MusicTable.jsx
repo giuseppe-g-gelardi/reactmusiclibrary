@@ -19,7 +19,6 @@ const useStyles = makeStyles({
     marginTop: 20,
     marginBottom: 20,
     display: 'block',
-    // background: '#32424A',
   },
 })
 
@@ -61,7 +60,6 @@ export default function MusicTable() {
         <Container className={classes.field} style={{display: 'flex', marginTop: '75px'}}>
         <TextField 
         style={{flexGrow: 1}}
-          // InputLabelProps={{style: {color: '#fff'}}}
           label='Filter songs...'
           className={classes.text}
           variant='outlined'
