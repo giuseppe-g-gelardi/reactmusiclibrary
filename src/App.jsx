@@ -1,23 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Routes, Route } from 'react-router-dom/'
 import { ThemeProvider } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline';
 import MusicTable from './pages/MusicTable'
 import Layout from './components/Layout'
-import theme from './components/Theme/Theme';
+import { lightTheme, darkTheme } from './components/Theme/Theme'
 
 export default function App() {
 
-  // TODO add light/dark theme switch
+  const [darkMode, setDarkMode] = useState(false)
+  const theme = (darkMode ? darkTheme : lightTheme)
 
   return (
-    <ThemeProvider theme={theme}>
-        <CssBaseline />
-          <Layout>
-            <Routes>
-              <Route path='/' element={<MusicTable />} />
-            </Routes>
-          </Layout>
-    </ThemeProvider>
+      <ThemeProvider theme={theme}>
+          <CssBaseline />
+            <Layout check={darkMode} change={() => setDarkMode(!darkMode)}>
+              <Routes>
+                <Route path='/' element={<MusicTable />} />
+              </Routes>
+            </Layout>
+      </ThemeProvider>
   )
 }
