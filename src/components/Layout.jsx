@@ -4,9 +4,9 @@ import Typography from '@material-ui/core/Typography'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import { format } from 'date-fns'
-import MuiSwitch from './controls/MuiSwitch'
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Slide from '@mui/material/Slide';
+import Controls from './controls/Controls'
 
 const useStyles = makeStyles((theme) => {
   return {
@@ -81,24 +81,10 @@ export default function Layout(props) {
             Today is {format(new Date(), 'MMMM do, Y')}
           </Typography>
          
-              <MuiSwitch onChange={change} checked={check} />
+              <Controls.MuiSwitch onChange={change} checked={check} />
         </Toolbar>
       </AppBar>
       </HideOnScroll>
-
-
-
-
-      {/* <MuiAppBar 
-        title='Welcome to the Music Library!'
-        body={`Today is ${format(new Date(), 'mmmm do, Y')}`}
-        onChange={change}
-        checked={check}
-      /> */}
-
-
-
-
       <div className={classes.page}>
         <div className={classes.toolbar}>
         </div>

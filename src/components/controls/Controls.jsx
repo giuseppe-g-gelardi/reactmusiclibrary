@@ -1,7 +1,9 @@
 import ActionButton from "./ActionButton";
+import MuiSwitch from "./MuiSwitch";
 
 const Controls = {
-  ActionButton
+  ActionButton,
+  MuiSwitch
 }
 
 export default Controls
