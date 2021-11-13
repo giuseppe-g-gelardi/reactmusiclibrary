@@ -11,7 +11,7 @@ import UpdateIcon from '@material-ui/icons/Update';
       marginTop: 20,
       marginBottom: 20,
       display: 'block',
-      background: '#32424A',
+      // background: '#32424A',
       input: {
         "&::placeholder": {
           color: 'red'
@@ -62,7 +62,7 @@ export default function EditSong(props) {
     <Container>
         <form noValidate autoComplete='off' onSubmit={handleUpdate}>
           <TextField
-            InputLabelProps={{style: {color: '#fff'}}}
+            // InputLabelProps={{style: {color: '#fff'}}}
             style={{marginBottom: 20}}
             onChange={e => setTitle(e.target.value)} 
             className={classes.field}
@@ -74,7 +74,7 @@ export default function EditSong(props) {
           />
 
           <TextField
-            InputLabelProps={{style: {color: '#fff'}}}
+            // InputLabelProps={{style: {color: '#fff'}}}
             style={{marginBottom: 20}}
             onChange={e => setArtist(e.target.value)} 
             className={classes.field}
@@ -85,7 +85,7 @@ export default function EditSong(props) {
           />    
 
           <TextField
-            InputLabelProps={{style: {color: '#fff'}}}
+            // InputLabelProps={{style: {color: '#fff'}}}
             style={{marginBottom: 20}}
             onChange={e => setAlbum(e.target.value)} 
             className={classes.field}
@@ -96,7 +96,7 @@ export default function EditSong(props) {
           /> 
 
           <TextField
-            InputLabelProps={{style: {color: '#fff'}}}
+            // InputLabelProps={{style: {color: '#fff'}}}
             style={{marginBottom: 20}}
             onChange={e => setGenre(e.target.value)} 
             className={classes.field}
@@ -107,7 +107,7 @@ export default function EditSong(props) {
           />  
 
           <TextField
-            InputLabelProps={{style: {color: '#fff'}}}
+            // InputLabelProps={{style: {color: '#fff'}}}
             style={{marginBottom: 20}}
             onChange={e => setReleaseDate(e.target.value)} 
             className={classes.field}

@@ -19,7 +19,7 @@ const useStyles = makeStyles({
     marginTop: 20,
     marginBottom: 20,
     display: 'block',
-    background: '#32424A',
+    // background: '#32424A',
   },
 })
 
@@ -58,10 +58,10 @@ export default function MusicTable() {
 
   return (
     <Container>
-        <Container className={classes.field} style={{display: 'flex'}}>
+        <Container className={classes.field} style={{display: 'flex', marginTop: '75px'}}>
         <TextField 
         style={{flexGrow: 1}}
-          InputLabelProps={{style: {color: '#fff'}}}
+          // InputLabelProps={{style: {color: '#fff'}}}
           label='Filter songs...'
           className={classes.text}
           variant='outlined'
@@ -71,7 +71,7 @@ export default function MusicTable() {
           />
 
         <Button
-            color='secondary'
+            color='primary'
             variant='contained'
             endIcon={<AddCircleOutlineOutlined />}
             onClick={() => setOpenPopup(true)}

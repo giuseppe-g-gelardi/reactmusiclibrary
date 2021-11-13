@@ -34,21 +34,23 @@ const useStyles = makeStyles((theme) => {
       // background: '#263238'
     },
     title: {
+      flexGrow: 1,
       padding: theme.spacing(2),
     },
     appBar: {
+      // background: 'inherit',
       // background: '#32424A',
-      width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
+      // width: `calc(100% - ${drawerWidth}px)`,
+      // marginLeft: drawerWidth,
     },
     date: {
       flexGrow: 1,
       // color: '#fff'
     },
     toolbar: theme.mixins.toolbar,
-    avatar: {
-      marginLeft: theme.spacing(2)
-    }
+    // avatar: {
+    //   marginLeft: theme.spacing(2)
+    // }
   }
 })
 
@@ -74,11 +76,11 @@ export default function Layout({ children, check, change }) {
     <div className={classes.root}>
       <AppBar
         position="fixed" 
-        // className={classes.appBar}
-        color="transparent"
+        className={classes.appBar}
+        color="inherit"
       >
         <Toolbar>
-          <Typography variant='h5' className={classes.title}>
+          <Typography variant='h5' className={classes.title} >
             Welcome to the Music Library
           </Typography>
           <Typography 
@@ -86,40 +88,13 @@ export default function Layout({ children, check, change }) {
           >
             Today is {format(new Date(), 'MMMM do, Y')}
           </Typography>
-              {/* theme toggle switch */}
-              {/* <Switch /> no worky */}
+         
               <MuiSwitch onChange={change} checked={check} />
-              {/* theme toggle switch */}
         </Toolbar>
       </AppBar>
-   {/* side drawer */}
-    {/* <Drawer
-      className={classes.drawer}
-      variant='permanent'
-      anchor='left'
-      classes={{ paper: classes.drawerPaper }}
-    >
-      <div>
-        <Typography variant='h5' className={classes.title}>
-          Music
-        </Typography>
-      </div>
-        <List>
-          {menuItems.map(item => (
-            <ListItem
-              button
-              key={item.text}
-              onClick={() => navigate(item.path)}
-              className={location.pathname === item.path ? classes.active : null} 
-            >
-              <ListItemIcon>{item.icon}</ListItemIcon>
-              <ListItemText primary={item.text} />
-            </ListItem>
-          ))}
-        </List>
-      </Drawer> */}
       <div className={classes.page}>
-        <div className={classes.toolbar}></div>
+        <div className={classes.toolbar}>
+        </div>
         {children}
       </div>
     </div>

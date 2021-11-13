@@ -18,7 +18,9 @@ export default function MusicCard(props) {
       <Card elevation={3}>
         <CardHeader 
           avatar={
-            <Avatar style={{background: '#1E272C', color: '#425B67'}}>
+            <Avatar 
+            // style={{background: '#1E272C', color: '#425B67'}}
+            >
               {song.artist[0]}
             </Avatar>
           }

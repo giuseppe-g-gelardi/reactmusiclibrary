@@ -11,18 +11,18 @@ import TextField from '@mui/material/TextField'
       marginTop: 10,
       marginBottom: 10,
       display: 'block',
-      background: '#32424A',
-      input: {
-        "&::placeholder": {
-          color: 'red'
-        }
-      }
+      // background: '#32424A',
+      // input: {
+      //   "&::placeholder": {
+      //     color: 'red'
+      //   }
+      // }
     },
     text: {
       marginTop: 10,
       marginBottom: 10,
       display: 'block',
-      color: '#bd93f9',
+      // color: '#bd93f9',
     },
   })
 
@@ -62,7 +62,6 @@ export default function AddSongForm() {
     <Container>
         <form noValidate autoComplete='off' onSubmit={handleSubmit}>
           <TextField
-            InputLabelProps={{style: {color: '#fff'}}}
             style={{marginBottom: 20}}
             onChange={e => setTitle(e.target.value)} 
             className={classes.field}
@@ -73,7 +72,6 @@ export default function AddSongForm() {
           />
 
           <TextField
-            InputLabelProps={{style: {color: '#fff'}}}
             style={{marginBottom: 20}}
             onChange={e => setArtist(e.target.value)} 
             className={classes.field}
@@ -84,7 +82,6 @@ export default function AddSongForm() {
           />    
 
           <TextField
-            InputLabelProps={{style: {color: '#fff'}}}
             style={{marginBottom: 20}}
             onChange={e => setAlbum(e.target.value)} 
             className={classes.field}
@@ -95,7 +92,6 @@ export default function AddSongForm() {
           /> 
 
           <TextField
-            InputLabelProps={{style: {color: '#fff'}}}
             style={{marginBottom: 20}}
             onChange={e => setGenre(e.target.value)} 
             className={classes.field}
@@ -106,7 +102,6 @@ export default function AddSongForm() {
           />  
 
           <TextField
-            InputLabelProps={{style: {color: '#fff'}}}
             style={{marginBottom: 20}}
             onChange={e => setReleaseDate(e.target.value)} 
             className={classes.field}
@@ -118,7 +113,7 @@ export default function AddSongForm() {
 
           <Button
             type='submit'
-            color='secondary'
+            color='primary'
             variant='contained'
             endIcon={<KeyboardArrowRightIcon />}
           >

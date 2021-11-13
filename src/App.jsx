@@ -12,13 +12,13 @@ export default function App() {
   const theme = (darkMode ? darkTheme : lightTheme)
 
   return (
-      <ThemeProvider theme={theme}>
-          <CssBaseline />
-            <Layout check={darkMode} change={() => setDarkMode(!darkMode)}>
-              <Routes>
-                <Route path='/' element={<MusicTable />} />
-              </Routes>
-            </Layout>
-      </ThemeProvider>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+        <Layout check={darkMode} change={() => setDarkMode(!darkMode)}>
+          <Routes>
+            <Route path='/' element={<MusicTable />} />
+          </Routes>
+        </Layout>
+    </ThemeProvider>
   )
 }
