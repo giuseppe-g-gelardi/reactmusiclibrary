@@ -14,13 +14,22 @@ const lightTheme = createTheme({
   ...baseTheme,
   palette: {
     type: 'light'
-  }  
+  },  
+  
 })
 
 const darkTheme = createTheme({
   ...baseTheme,
   palette: {
     type: 'dark'
+  },
+  components: {
+    MuiTextField: {
+      color: '#fff',
+      inputLabelProps: {
+        color: '#fff'
+      }
+    }, 
   }
 })
 

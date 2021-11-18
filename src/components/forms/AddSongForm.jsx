@@ -11,12 +11,8 @@ import TextField from '@mui/material/TextField'
       marginTop: 10,
       marginBottom: 10,
       display: 'block',
-      // background: '#32424A',
-      // input: {
-      //   "&::placeholder": {
-      //     color: 'red'
-      //   }
-      // }
+      
+    
     },
     text: {
       marginTop: 10,
@@ -35,7 +31,11 @@ export default function AddSongForm() {
   const [releaseDate, setReleaseDate] = useState('')
   const classes = useStyles()
 
-  const api = 'http://localhost:3800/api/songs'
+  // json server
+  const api = 'http://localhost:8000/songs'
+
+  // rest api
+  // const api = 'http://localhost:3800/api/songs'
 
   const handleSubmit = async e => {
     e.preventDefault()

@@ -28,8 +28,9 @@ export default function MusicTable() {
   const classes = useStyles()
 
   const [openPopup, setOpenPopup] = useState(false)
-
-  const api = 'http://localhost:3800/api/songs'
+  
+  const api = 'http://localhost:8000/songs'
+  // const api = 'http://localhost:3800/api/songs'
 
   useEffect(() => {
     getSongs()
@@ -46,7 +47,8 @@ export default function MusicTable() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3800/api/songs/${id}`)
+      await axios.delete(`http://localhost:8000/songs/${id}`)
+      // await axios.delete(`http://localhost:3800/api/songs/${id}`)
       getSongs()
     } catch (error) {
       console.log(error)

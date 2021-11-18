@@ -48,7 +48,8 @@ export default function EditSong(props) {
       "releaseDate": releaseDate
     }
     try {
-      await axios.put(`http://localhost:3800/api/songs/${id}`, song)
+      await axios.put(`http://localhost:8000/songs/${id}`, song) // json server
+      // await axios.put(`http://localhost:3800/api/songs/${id}`, song) // rest api
       .then((song) => {
         console.log(song)
       })
@@ -56,7 +57,7 @@ export default function EditSong(props) {
       console.log(error)
     }
   }
-  
+
   return (
 
     <Container>
