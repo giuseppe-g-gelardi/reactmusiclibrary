@@ -50,7 +50,7 @@ export default function MusicTable() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/songs/${id}`)
+      await axios.delete(`https://my-json-server.typicode.com/giuseppe-g-gelardi/musiclibrary_dbjson/songs/${id}`)
       // await axios.delete(`http://localhost:3800/api/songs/${id}`)
       getSongs()
     } catch (error) {
