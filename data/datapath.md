@@ -12,3 +12,6 @@ axios.get(`${api}/api/music`).then(
 
 json server
 const dbUri = 'http://localhost:8000/songs'
+
+live json server
+https://my-json-server.typicode.com/giuseppe-g-gelardi/musiclibrary_dbjson/songs

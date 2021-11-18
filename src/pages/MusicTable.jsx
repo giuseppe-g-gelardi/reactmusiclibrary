@@ -29,7 +29,10 @@ export default function MusicTable() {
 
   const [openPopup, setOpenPopup] = useState(false)
   
-  const api = 'http://localhost:8000/songs'
+
+
+  const api = 'https://my-json-server.typicode.com/giuseppe-g-gelardi/musiclibrary_dbjson/songs'
+  // const api = 'http://localhost:8000/songs'
   // const api = 'http://localhost:3800/api/songs'
 
   useEffect(() => {
