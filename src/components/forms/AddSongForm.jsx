@@ -33,13 +33,13 @@ export default function AddSongForm() {
 
 
   // live json server
-  const api = 'https://my-json-server.typicode.com/giuseppe-g-gelardi/musiclibrary_dbjson/songs'
+  // const api = 'https://my-json-server.typicode.com/giuseppe-g-gelardi/musiclibrary_dbjson/songs'
 
   // json server
   // const api = 'http://localhost:8000/songs'
 
   // rest api
-  // const api = 'http://localhost:3800/api/songs'
+  const api = 'http://localhost:3800/api/songs'
 
   const handleSubmit = async e => {
     e.preventDefault()
